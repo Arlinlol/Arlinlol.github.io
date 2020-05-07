@@ -1,229 +1,298 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="renderer" content="webkit">
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/images/pasted-0.png">
+    
+    
+    
+<link rel="stylesheet" href="/css/mdui.min.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
 
-  
-  <title>Archive: 2020 | Silicon-based Life</title>
+    
+    
 
-  <link rel="shortcut icon" href="/images/pasted-0.png">
-  <link rel="alternate" href="/atom.xml" title="Silicon-based Life">
-  <meta name="description" content="说简单点就是码农">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Silicon-based Life">
-<meta property="og:url" content="http://arlin.wang/archives/2020/index.html">
-<meta property="og:site_name" content="Silicon-based Life">
-<meta property="og:description" content="说简单点就是码农">
-<meta property="og:locale" content="zh">
-<meta property="article:author" content="arlin">
-<meta property="article:tag" content="奋斗的人 在路上的人 ledanzu luklik arlin.wang ">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:creator" content="@https:&#x2F;&#x2F;twitter.com&#x2F;ledanzu">
 
-  <meta name="keywords" content="奋斗的人 在路上的人 ledanzu luklik arlin.wang ">
-  <meta name="format-detection" content="telephone=no,email=no">
-  <meta name="theme-color" content="#9C27B0">
 
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Silicon-based Life">
-  <meta name="msapplication-starturl" content="http://arlin.wang/archives/2020/">
-  <meta name="msapplication-navbutton-color" content="#9C27B0">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Silicon-based Life">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon" href="/images/pasted-0.png">
 
-  
-    <link rel="canonical" href="http://arlin.wang/archives/2020/index.html">
-  
 
-  
-  
 
-  
-  
-  
 
-  
-<link rel="stylesheet" href="/css/mdui.css">
-<link rel="stylesheet" href="/css/style.css">
 
-  
-<link rel="stylesheet" href="/custom.css">
 
+
+
+
+          
+
+
+    
+    
+    <title>
+          
+            Silicon-based Life
+        
+    </title>
+    
+    
 <meta name="generator" content="Hexo 4.2.0"></head>
-<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-blue-grey mdui-theme-accent-indigo">
-  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
-  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
-  <div class="mdui-toolbar mdui-color-theme">
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
     <a href="/" class="mdui-typo-headline">Silicon-based Life</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">一个赋予硅基生命能力的人，说白了就是码农。</a>
     <div class="mdui-toolbar-spacer"></div>
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
-    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
   </div>
 </header>
+
 <div class="mdui-dialog" id="search">
   
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="请输入关键字"><input type="hidden" name="sitesearch" value="http://arlin.wang"></form>
-    <div class="search-result"></div>
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
   
 </div>
-  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
-  <div class="mdui-grid-tile">
-    <img src="/images/banner.png" style="height: 160px;">
-    <img src="/images/pasted-0.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
-    <div class="mdui-grid-tile-actions">
-      <div class="mdui-grid-tile-text">
-        <div class="mdui-grid-tile-title">arlin</div>
-        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>一个赋予硅基生命能力的人，说白了就是码农。</div>
-      </div>
-      
-    </div>
-  </div>
 
-  <div class="mdui-list" mdui-collapse="{accordion: true}">
-    <a href="/" class="mdui-list-item mdui-ripple">
-      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
-      <div class="mdui-list-item-content">Home</div>
-    </a>
-    <div class="mdui-collapse-item">
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
-        <div class="mdui-list-item-content">Archive</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
-        
-        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/05/">May 2020<span class="mdui-ripple sidebar_archives-count">1</span></a>
-        
-      </div>
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
     </div>
-    <div class="mdui-collapse-item">
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
-        <div class="mdui-list-item-content">Category</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
-        
-        
-        
-          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
-        
-      </div>
-    </div>
-    <div class="mdui-collapse-item">
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
-        <div class="mdui-list-item-content">Tag</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
-        
-        
-        
-          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Tags</a>
-        
-      </div>
-    </div>
-    <a href="/about" class="mdui-list-item mdui-ripple">
-      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
-      <div class="mdui-list-item-content">About</div>
-    </a>
-  </div>
 
-  <div class="mdui-divider"></div>
-
-  <div class="mdui-list" mdui-collapse="{accordion: true}">
     
-      <a href="/tagcloud" class="mdui-list-item mdui-ripple">标记</a>
-    
-      <a href="/gallery" class="mdui-list-item mdui-ripple">图片</a>
-    
-    <div class="mdui-collapse-item">
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <div class="mdui-list-item-content">Links</div>
-        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
-        
-        
-          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Links</a>
-        
-      </div>
-    </div>
-  </div>
-</aside>
-  <main id="main" class="mdui-m-t-5 fadeIn animated">
-
-  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
-    <a href="/2020/05/07/hello-world/">
-      <header class="mdui-card-media mdui-ripple">
-        
-        <img src="/images/random/material-5.png" style="max-height: 240px;">
-        <div class="mdui-card-media-covered">
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">Hello World</div>
-            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-05-07 / <i class="iconfont">&#xe601;</i> arlin</div>
-          </div>
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Tags</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Archives</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">About</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
         </div>
-      </header>
-    </a>
-    <div class="mdui-card-content mdui-typo">
-      
-        Welcome to Hexo
-      
-      <a href="/2020/05/07/hello-world/">Read More >></a>
     </div>
-    <footer class="mdui-card-actions">
-      
-      
-    </footer>
-  </article>
 
-</main>
-  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
-  <div class="mdui-p-y-0 mdui-text-center">
     
-      <a href="https://twitter.com/ledanzu" target="_blank"><i class="mdui-p-a-1 mdui-icon iconfont mdui-text-color-theme-a100">&#xe655;</i></a>
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/images/pasted-0.png"/>
+                
+            </div>
+            <div class="sidebar-author-name">arlin</div>
+            <div class="sidebar-description">说简单点就是码农</div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-twitter"></i></span>
+                    <a href="https://twitter.com/ledanzu" target="_blank" rel="noopener" class="mdui-chip-title">t</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-facebook"></i></span>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" class="mdui-chip-title">f</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a href="https://github.com/Arlinlol" target="_blank" rel="noopener" class="mdui-chip-title">g</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a href="https://storm-f.github.io/" target="_blank" rel="noopener" class="mdui-list-item mdui-ripple">
+                            F同学
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="mdui-divider"></div>
     
     
-      <a href="https://www.facebook.com" target="_blank"><i class="mdui-p-a-1 mdui-icon iconfont mdui-text-color-theme-a100">&#xe66e;</i></a>
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
     
-    
-    
-    
-    
-    
-      <a href="https://github.com/Arlinlol" target="_blank"><i class="mdui-p-a-1 mdui-icon iconfont mdui-text-color-theme-a100">&#xe7ab;</i></a>
-    
-    
-    
-    
-      <a href="https://www.douban.com/people/Arlin.sky/" target="_blank"><i class="mdui-p-a-1 mdui-icon iconfont mdui-text-color-theme-a100">&#xe667;</i></a>
-    
-    
-    
-  </div>
-  <div class="mdui-p-y-1 mdui-text-center">
-    Copyright &copy; 2020 arlin<br>
-    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
-    
-  </div>
+
+<div class="mdui-card mdui-p-a-4 mdui-m-b-5">
+    <div class="page-describe">
+        2 posts in total.
+    </div>
+    <div class="posts-collapse">
+        
+            
+            
+                <div class="collection-title">
+                    <a href="/archives/2020"><h2>2020<small>Archives</small></h2></a>
+                </div>
+                
+            
+
+            <div class="collection-item">
+                <h3><a href="/12013/">Untitled</a></h3>
+                <time itemprop="dateCreated" datetime=2020-05-07 >
+                    2020.05.07
+                </time>
+            </div>
+        
+            
+            
+
+            <div class="collection-item">
+                <h3><a href="/16107/">Hello World</a></h3>
+                <time itemprop="dateCreated" datetime=2020-05-07 >
+                    2020.05.07
+                </time>
+            </div>
+        
+    </div>
+</div>
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2020 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        arlin
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>Total Visitors <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>Total Views <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
 </footer>
-  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
   
   
-<script src="/js/mdui.js"></script>
-<script src="/js/script.js"></script>
 
-  
-<script src="/custom.js"></script>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<script src="/js/mdui.min.js"></script>
+<script src="/js/meadow.js"></script>
 
 </body>
-</html>
+</html >
