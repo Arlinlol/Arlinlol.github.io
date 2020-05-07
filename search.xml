@@ -20,9 +20,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">]]></content>
   </entry>
   <entry>
-    <title>Untitled</title>
+    <title>编辑器使用技巧备忘</title>
     <url>/12013/</url>
-    <content><![CDATA[<p>cceasdfasdf</p>
+    <content><![CDATA[<h3 id="Latex"><a class="header-anchor" href="#Latex">¶</a> Latex</h3>
+<h5 id="Mathjax公式标号与引用"><a class="header-anchor" href="#Mathjax公式标号与引用">¶</a> Mathjax公式标号与引用</h5>
+<p>MathJax的公式语法与LaTex相同，使用\tag{yourtag}给公式添加编号，使用\label{somelabel}添加引用标签。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adsfasd</span><br></pre></td></tr></table></figure>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">]]></content>
       <categories>
         <category>add</category>
