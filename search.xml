@@ -626,12 +626,8 @@ iota 可以被用作枚举值：</p>
 <h3 id="赋值运算符"><a class="header-anchor" href="#赋值运算符">¶</a> 赋值运算符</h3>
 <p><a href="http://www.runoob.com/go/go-operators.html" target="_blank" rel="noopener">http://www.runoob.com/go/go-operators.html</a></p>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">]]></content>
-      <categories>
-        <category>语言学习</category>
-      </categories>
       <tags>
         <tag>Go</tag>
-        <tag>Golang</tag>
       </tags>
   </entry>
   <entry>
@@ -640,13 +636,36 @@ iota 可以被用作枚举值：</p>
     <content><![CDATA[<h3 id="Latex"><a class="header-anchor" href="#Latex">¶</a> Latex</h3>
 <h5 id="Mathjax公式标号与引用"><a class="header-anchor" href="#Mathjax公式标号与引用">¶</a> Mathjax公式标号与引用</h5>
 <p>MathJax的公式语法与LaTex相同，使用\tag{yourtag}给公式添加编号，使用\label{somelabel}添加引用标签。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adsfasd</span><br></pre></td></tr></table></figure>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">]]></content>
       <categories>
         <category>add</category>
       </categories>
       <tags>
         <tag>cd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>而立之年</title>
+    <url>/51281/</url>
+    <content><![CDATA[<h1 id="那是我三十岁写的"><a class="header-anchor" href="#那是我三十岁写的">¶</a> 那是我三十岁写的</h1>
+<p>而立之年，意味着什么？应该成家立业、应该事业有根基、应该负起责任、应该…有人说未来十年很难，咬咬牙就挺过去了。按说不应有那么多<code>应该</code>，人有不通的性格，不通的成长轨迹，不同的生活经历，怎能用同一<code>应该</code>而强为之。</p>
+<p>以为，未来十年，不是一个爱做梦的年纪，而是一个梦醒了需要脚踏实地变为现实的年纪。有自己的想法、价值和抱负。</p>
+<p>只有努力让自己成为更好的人</p>
+<p>却不能强迫别人来爱自己</p>
+<p>在人生的路上</p>
+<p>每个人</p>
+<p>都会跌跌撞撞</p>
+<p>有几处伤疤</p>
+<p>都会彷徨失措</p>
+<p>要的是勇敢的站起来</p>
+<p>爱以相濡以沫携手白头</p>
+<p>时光的荏苒慢明白，多东西。</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">]]></content>
+      <categories>
+        <category>杂文</category>
+      </categories>
+      <tags>
+        <tag>杂文</tag>
       </tags>
   </entry>
 </search>
