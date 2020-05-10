@@ -1102,4 +1102,186 @@ StructLog4J.setFormatter(YamlFormatter.getInstance());
         <tag>structlog4j</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Dart是个啥，一文了解！</title>
+    <url>/31296/</url>
+    <content><![CDATA[<h3 id="前言"><a class="header-anchor" href="#前言">¶</a> 前言</h3>
+<p>Flutter这两年火了，最近有个自己的项目在筹备中，决定用Flutter实现，Flutter应用程序使用Dart语言开发，Dart是面向对象编程语言，由Google于2011年推出，目前最新版本是2.0，为了更好的使用Flutter进行应用开发，本文将详细介绍Dart语言的语法和特性。</p>
+<h3 id="重要概念"><a class="header-anchor" href="#重要概念">¶</a> 重要概念</h3>
+<p>在学习Dart之前要了解一下Dart相关概念：</p>
+<ol>
+<li>能够放在变量中的所有内容都是对象，每一个对象都是一个类的实例。甚至于数字、函数和null值都是丢向，并且所有对象都继承自Object类。</li>
+<li>Dart是强类型语言，但类型标识是可选的，因为Dart可以推断类型。如果要明确说明不需要任何类型，可以使用类型<code>dynamic</code>标识。</li>
+<li>Dart支持反省，如List或者任何类型的对象列表。</li>
+<li>Dart支持顶级函数（例如main函数），以及绑定到类或者对象的函数（分别是静态方法和实例方法）。函数内部可以创建函数（嵌套函数或者本地函数）。</li>
+<li>Dart支持顶级变量，以及绑定到类或对象的变量（分别是静态变量和实例变量）。</li>
+<li>与Java不通，Dart没有关键字<code>public</code>、<code>protected</code>和<code>private</code>。如果设置私有变量或者函数，则变量和函数名以下划线<code>——</code>开头。</li>
+<li>标识符可以以字母或者下划线<code>_</code>开头，后跟这些字符加数字的任意组合。</li>
+<li>Dart有两个表达式（具有运行时值）和语句(不具有)。例如三元表达式<code>?expr1:expr2</code>的值为expr1或expr2。将其余if-else语句进行比较，该语句没有任何职。语句通畅包含一个或多个表达式，但表达式不能直接包含语句。</li>
+<li>Dart工具可以报告两种问题：告警和错误。告警知识表明您的代码可能无法正常工作，但他不会阻止你的程序执行。错误可以是编译时或者运行时。编译时错误会组织代码执行；运行时错误导致代码执行时发生异常。</li>
+</ol>
+<h3 id="关键字"><a class="header-anchor" href="#关键字">¶</a> 关键字</h3>
+<p>任何语言都有关键字，关键字是在编程时不能使用作为标识符的单次。Dart的关键字如下：<br>
+<img src="/images/pasted-2.png" alt="upload successful"></p>
+<p>编码时应避免使用以上单词作为标识符，如果有必要，可以使用带有上标的单词作为标识符：</p>
+<ul>
+<li>带有上标1的单词是上下文关键字，仅在特定位置有含义，它们在任何地方都是有效的；</li>
+<li>带有上标2的单词是内置标识符，它们在大多数地方是有效的，但不能用作为类和类型名称或作为一个导入前缀；</li>
+<li>带有上标3的单词是与Dart1.0发布后添加的异步支持相关的有限的保留字符，不能在任何标记为async，async * 或sync * 的任何函数体中使用await和yield作为标识符</li>
+</ul>
+<h3 id="变量"><a class="header-anchor" href="#变量">¶</a> 变量</h3>
+<h4 id="变量的定义"><a class="header-anchor" href="#变量的定义">¶</a> 变量的定义</h4>
+<ol>
+<li>可以使用var来定义变量，变量的类型可以通过变量值来推断出来</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var name &#x3D; &quot;hi&quot;; &#x2F;&#x2F;String类型</span><br><span class="line">var age &#x3D; 18; &#x2F;&#x2F;int类型</span><br><span class="line">var high &#x3D; 1.70; &#x2F;&#x2F;double类型</span><br></pre></td></tr></table></figure>
+<p>如上变量定义后其类型已经确定，不可再将其他类型的值赋给变量。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var name &#x3D; &quot;hi&quot;; &#x2F;&#x2F;String类型</span><br><span class="line">name &#x3D; 3; &#x2F;&#x2F;此处编译器会报错，name被定义赋值之后已经是一个String类型，不可再赋值int类型值</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>也可以使用特定类型来定义变量</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String name &#x3D; &quot;bruce&quot;; &#x2F;&#x2F;String类型</span><br><span class="line">int age &#x3D; 18; &#x2F;&#x2F;int类型</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>如果变量不限于单个类型，则可以使用dynamic或Object来定义变量</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dynamic value &#x3D; 18;</span><br><span class="line">print(&quot;value &#x3D; $value&quot;);</span><br><span class="line">value &#x3D; &quot;bruce&quot;;</span><br><span class="line">print(&quot;value &#x3D; $value&quot;);</span><br><span class="line">value &#x3D; 3.5;</span><br><span class="line">print(&quot;value &#x3D; $value&quot;);</span><br><span class="line">  </span><br><span class="line">Object val &#x3D; 18;</span><br><span class="line">print(&quot;val &#x3D; $val&quot;);</span><br><span class="line">val &#x3D; &quot;bruce&quot;;</span><br><span class="line">print(&quot;val &#x3D; $val&quot;);</span><br><span class="line">val &#x3D; 3.5;</span><br><span class="line">print(&quot;val &#x3D; $val&quot;);</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">value &#x3D; 18</span><br><span class="line">value &#x3D; bruce</span><br><span class="line">value &#x3D; 3.5</span><br><span class="line">val &#x3D; 18</span><br><span class="line">val &#x3D; bruce</span><br><span class="line">val &#x3D; 3.5</span><br></pre></td></tr></table></figure>
+<h4 id="变量的默认值"><a class="header-anchor" href="#变量的默认值">¶</a> 变量的默认值</h4>
+<p>由于前文关于Dart的一些概念中说到过，能够放在变量中的所有内容都是对象，所以如果一个变量没有初始化值，那它的默认值就为null。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int value1;</span><br><span class="line">print(&quot;value1 &#x3D; $value1&quot;);</span><br><span class="line">bool value2;</span><br><span class="line">print(&quot;value2 &#x3D; $value2&quot;);</span><br><span class="line">var value3;</span><br><span class="line">print(&quot;value3 &#x3D; $value3&quot;);</span><br><span class="line">dynamic value4;</span><br><span class="line">print(&quot;value4 &#x3D; $value4&quot;);</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">value1 &#x3D; null</span><br><span class="line">value2 &#x3D; null</span><br><span class="line">value3 &#x3D; null</span><br><span class="line">value4 &#x3D; null</span><br></pre></td></tr></table></figure>
+<h4 id="final 和 const"><a class="header-anchor" href="#final 和 const">¶</a> final 和 const</h4>
+<p>如果不打算更改变量，可以使用final或者const。一个final变量只能被设置一次，而const变量是编译时常量，定义时必须赋值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; Person类</span><br><span class="line">class Person &#123;</span><br><span class="line">  static const desc &#x3D; &quot;This is a Person class&quot;; &#x2F;&#x2F;必须定义时赋值，否则编译时报错</span><br><span class="line">  final name;</span><br><span class="line">  Person(this.name); &#x2F;&#x2F;对象初始化时赋值一次</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 定义一个Person对象</span><br><span class="line">Person p &#x3D; Person(&quot;Bruce&quot;); &#x2F;&#x2F;构造函数，创建对象时设置一次name</span><br><span class="line">print(&quot;p.name &#x3D; $&#123;p.name&#125;&quot;); &#x2F;&#x2F;可正常输出 p.name &#x3D; Bruce</span><br><span class="line">p.name &#x3D; &quot;haha&quot;; &#x2F;&#x2F;编译器报错</span><br></pre></td></tr></table></figure>
+<h3 id="内置类型"><a class="header-anchor" href="#内置类型">¶</a> 内置类型</h3>
+<p>Dart语言支持以下类型：</p>
+<ul>
+<li>numbers<br>
+包含int和double两种类型，没有像Java中的float类型，int和double都是num的子类型。</li>
+<li>strings<br>
+Dart的字符串是一系列UTF-16代码单元。创建方法如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String str1 &#x3D; &quot;hello&quot;; &#x2F;&#x2F;可以使用单引号或双引号</span><br><span class="line">print(&quot;str1 &#x3D; $str1&quot;);</span><br><span class="line">String str2 &#x3D; &quot;&quot;&quot;Hi,Bruce</span><br><span class="line">This is Xiaoming.</span><br><span class="line">&quot;&quot;&quot;; &#x2F;&#x2F;使用带有单引号或双引号的三重引号可以创建多行字符串</span><br><span class="line">print(&quot;str2 &#x3D; $str2&quot;);</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str1 &#x3D; hello</span><br><span class="line">str2 &#x3D; Hi,Bruce</span><br><span class="line">  This is Xiaoming.</span><br></pre></td></tr></table></figure>
+<ul>
+<li>booleans<br>
+Dart有一个名为bool的类型，只有两个对象具有bool类型：true和false，他们都是编译时常量。</li>
+<li>lists<br>
+和其他编程语言常见的集合一样，Dart中使用的集合是数组或有序的对象组。Dart中数组是List对象。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List arr &#x3D; [&quot;Bruce&quot;, &quot;Nick&quot;, &quot;John&quot;];</span><br><span class="line">print(&quot;arr &#x3D; $arr&quot;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>maps</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Map map &#x3D; &#123;</span><br><span class="line">&quot;name&quot;: &quot;Bruce&quot;,</span><br><span class="line">&quot;age&quot;: 18,</span><br><span class="line">&quot;high&quot;: 1.70</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">print(&quot;map &#x3D; $map&quot;);</span><br><span class="line">print(&quot;map[&#39;name&#39;] &#x3D; $&#123;map[&#39;name&#39;]&#125;&quot;);</span><br><span class="line"></span><br><span class="line">var map1 &#x3D; &#123;</span><br><span class="line">1: &quot;hi&quot;,</span><br><span class="line">2: &quot;hello&quot;,</span><br><span class="line">3: &quot;yep&quot;</span><br><span class="line">&#125;;</span><br><span class="line">print(&quot;map1 &#x3D; $map1&quot;);</span><br><span class="line">print(&quot;map1[1] &#x3D; $&#123;map1[1]&#125;&quot;);</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">map &#x3D; &#123;name: Bruce, age: 18, high: 1.7&#125;</span><br><span class="line">map[&#39;name&#39;] &#x3D; Bruce</span><br><span class="line">map1 &#x3D; &#123;1: hi, 2: hello, 3: yep&#125;</span><br><span class="line">map1[1] &#x3D; hi</span><br></pre></td></tr></table></figure>
+<ul>
+<li>runes<br>
+符文是字符串的UTF-32代码点。在字符串中表示32位Unicode值需要特殊语法，常用方法是 \uXXXX，其中XXXX是4位十六进制值，比如小心心（♥）是\u2665。要指定多于或少于4个十六进制数字，请将值放在大括号中。 比如，微笑（😆）是\u{1f600}。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String smile &#x3D; &#39;\u&#123;1f600&#125;&#39;;</span><br><span class="line">print(&quot;微笑：$smile&quot;);</span><br><span class="line"></span><br><span class="line">Runes input &#x3D; new Runes(</span><br><span class="line">  &#39;\u2665  \u&#123;1f605&#125;  \u&#123;1f60e&#125;  \u&#123;1f47b&#125;  \u&#123;1f596&#125;  \u&#123;1f44d&#125;&#39;);</span><br><span class="line">print(String.fromCharCodes(input));</span><br></pre></td></tr></table></figure>
+<p>输出结果为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">微笑：😀</span><br><span class="line">♥  😅  😎  👻  🖖  👍</span><br></pre></td></tr></table></figure>
+<h3 id="函数"><a class="header-anchor" href="#函数">¶</a> 函数</h3>
+<p>Dart是一种真正的面向对象语言，因此即使是函数也是对象并且具有类型Function。这意味着函数可以分配给变量或作为参数传递给其他函数。</p>
+<h4 id="定义方法"><a class="header-anchor" href="#定义方法">¶</a> 定义方法</h4>
+<p>和绝大多数编程语言一样，Dart函数通常的定义方式为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String getName() &#123;</span><br><span class="line">  return &quot;Bruce&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果函数体中只包含一个表达式，则可以使用简写语法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String getName() &#x3D;&gt; &quot;Bruce&quot;;</span><br></pre></td></tr></table></figure>
+<h4 id="可选参数"><a class="header-anchor" href="#可选参数">¶</a> 可选参数</h4>
+<p>Dart函数可以设置可选参数，可以使用命名参数也可以使用位置参数。</p>
+<p>命名参数，定义格式如 <code>{param1, param2, …}</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 函数定义</span><br><span class="line">void showDesc(&#123;var name, var age&#125;) &#123;</span><br><span class="line">  if(name !&#x3D; null) &#123;</span><br><span class="line">    print(&quot;name &#x3D; $name&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  if(age !&#x3D; null) &#123;</span><br><span class="line">    print(&quot;age &#x3D; $age&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 函数调用</span><br><span class="line">showDesc(name: &quot;Bruce&quot;);</span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">name &#x3D; Bruce</span><br></pre></td></tr></table></figure>
+<p>位置参数，使用 [] 来标记可选参数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 函数定义</span><br><span class="line">void showDesc(var name, [var age]) &#123;</span><br><span class="line">  print(&quot;name &#x3D; $name&quot;);</span><br><span class="line">  </span><br><span class="line">  if(age !&#x3D; null) &#123;</span><br><span class="line">    print(&quot;age &#x3D; $age&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 函数调用</span><br><span class="line">showDesc(&quot;Bruce&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">name &#x3D; Bruce</span><br></pre></td></tr></table></figure>
+<h4 id="默认值"><a class="header-anchor" href="#默认值">¶</a> 默认值</h4>
+<p>函数的可选参数也可以使用 = 设置默认值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 函数定义</span><br><span class="line">void showDesc(var name, [var age &#x3D; 18]) &#123;</span><br><span class="line">  print(&quot;name &#x3D; $name&quot;);</span><br><span class="line">  </span><br><span class="line">  if(age !&#x3D; null) &#123;</span><br><span class="line">    print(&quot;age &#x3D; $age&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 函数调用</span><br><span class="line">showDesc(&quot;Bruce&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">name &#x3D; Bruce</span><br><span class="line">age &#x3D; 18</span><br></pre></td></tr></table></figure>
+<h4 id="mian函数"><a class="header-anchor" href="#mian函数">¶</a> mian函数</h4>
+<p>和其他编程语言一样，Dart中每个应用程序都必须有一个顶级main()函数，该函数作为应用程序的入口点。</p>
+<h4 id="函数作为参数"><a class="header-anchor" href="#函数作为参数">¶</a> 函数作为参数</h4>
+<p>Dart中的函数可以作为另一个函数的参数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 函数定义</span><br><span class="line">void println(String name) &#123;</span><br><span class="line">  print(&quot;name &#x3D; $name \n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void showDesc(var name, Function log) &#123;</span><br><span class="line">  log(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 函数调用</span><br><span class="line">showDesc(&quot;Bruce&quot;, println);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">name &#x3D; Bruce</span><br></pre></td></tr></table></figure>
+<h4 id="匿名函数"><a class="header-anchor" href="#匿名函数">¶</a> 匿名函数</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 函数定义</span><br><span class="line">void showDesc(var name, Function log) &#123;</span><br><span class="line">  log(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 函数调用，匿名函数作为参数</span><br><span class="line">showDesc(&quot;Bruce&quot;, (name) &#123;</span><br><span class="line">    print(&quot;name &#x3D; $name&quot;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">name &#x3D; Bruce</span><br></pre></td></tr></table></figure>
+<h4 id="嵌套函数"><a class="header-anchor" href="#嵌套函数">¶</a> 嵌套函数</h4>
+<p>Dart支持嵌套函数，也就是函数中可以定义函数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 函数定义</span><br><span class="line">void showDesc(var name) &#123;</span><br><span class="line">  print(&quot;That is a nested function!&quot;);</span><br><span class="line">  </span><br><span class="line">  &#x2F;&#x2F;函数中定义函数</span><br><span class="line">  void println(var name) &#123;</span><br><span class="line">    print(&quot;name &#x3D; $name&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  println(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 函数调用</span><br><span class="line">showDesc(&quot;Bruce&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">That is a nested function!</span><br><span class="line">name &#x3D; Bruce</span><br></pre></td></tr></table></figure>
+<h3 id="运算符"><a class="header-anchor" href="#运算符">¶</a> 运算符</h3>
+<p><img src="/images/pasted-3.png" alt="upload successful"></p>
+<p>下面就对一些对于Java或Objective-C来说未使用过的运算符通过代码来做个介绍。</p>
+<ul>
+<li><code>?.</code>使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;定义类</span><br><span class="line">class Person &#123;</span><br><span class="line">  var name;</span><br><span class="line">  Person(this.name);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 调用</span><br><span class="line">Person p;</span><br><span class="line">var name &#x3D; p?.name; &#x2F;&#x2F;先判断p是否为null，如果是，则name为null；如果否，则返回p.name值</span><br><span class="line">print(&quot;name &#x3D; $name&quot;);</span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">name &#x3D; null</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>~/</code>的使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 代码语句</span><br><span class="line">var num &#x3D; 10;</span><br><span class="line">var result &#x3D; num ~&#x2F; 3; &#x2F;&#x2F;得出一个小于等于(num&#x2F;3)的最大整数</span><br><span class="line">print(&quot;result &#x3D; $result&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">result &#x3D; 3</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>as</code>的使用，as用来类型转化</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 类定义</span><br><span class="line">class Banana &#123;</span><br><span class="line">  var weight;</span><br><span class="line">  Banana(this.weight);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Apple &#123;</span><br><span class="line">  var weight;</span><br><span class="line">  Apple(this.weight);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 调用</span><br><span class="line">dynamic b &#x3D; Banana(20);</span><br><span class="line">(b as Banana).weight &#x3D; 20; &#x2F;&#x2F; 正常执行</span><br><span class="line">print(&quot;b.weight &#x3D; $&#123;(b as Banana).weight&#125;&quot;);</span><br><span class="line">(b as Apple).weight &#x3D; 30; &#x2F;&#x2F; 类型转换错误，运行报错</span><br><span class="line">print(&quot;b.weight &#x3D; $&#123;(b as   Apple).weight&#125;&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;输出结果</span><br><span class="line">b.weight &#x3D; 20</span><br><span class="line">Uncaught exception:</span><br><span class="line">CastError: Instance of &#39;Banana&#39;: type &#39;Banana&#39; is not a subtype of type &#39;Apple&#39;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>is</code>的使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 函数和类代码定义</span><br><span class="line">getFruit() &#x3D;&gt; Banana(20); &#x2F;&#x2F; 获取一个水果对象</span><br><span class="line"></span><br><span class="line">class Banana &#123;</span><br><span class="line">  var weight;</span><br><span class="line">  Banana(this.weight);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Apple &#123;</span><br><span class="line">  var color;</span><br><span class="line">  Apple(this.color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 调用</span><br><span class="line">var b &#x3D; getFruit();</span><br><span class="line">if(b is Apple) &#123; &#x2F;&#x2F;判断对象是否为Apple类</span><br><span class="line">  print(&quot;The fruit is an apple&quot;);</span><br><span class="line">&#125; else if(b is Banana) &#123; &#x2F;&#x2F;判断水果是否为Banana类</span><br><span class="line">  print(&quot;The fruit is a banana&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">The fruit is a banana</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>??</code>的使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 操作代码块</span><br><span class="line">String name;</span><br><span class="line">String nickName &#x3D; name ?? &quot;Nick&quot;; &#x2F;&#x2F;如果name不为null，则nickName值为name的值，否则值为Nick</span><br><span class="line">print(&quot;nickName &#x3D; $nickName&quot;);</span><br><span class="line">  </span><br><span class="line">name &#x3D; &quot;Bruce&quot;;</span><br><span class="line">nickName &#x3D; name ?? &quot;Nick&quot;; &#x2F;&#x2F;如果name不为null，则nickName值为name的值，否则值为Nick</span><br><span class="line">print(&quot;nickName &#x3D; $nickName&quot;);</span><br><span class="line">  </span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">nickName &#x3D; Nick</span><br><span class="line">nickName &#x3D; Bruce</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>..</code>的使用，级联操作允许同一个</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 类定义</span><br><span class="line">class Banana &#123;</span><br><span class="line">  var weight;</span><br><span class="line">  var color;</span><br><span class="line">  Banana(this.weight, this.color);</span><br><span class="line">  </span><br><span class="line">  void showWeight() &#123;</span><br><span class="line">    print(&quot;weight &#x3D; $weight&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  void showColor() &#123;</span><br><span class="line">    print(&quot;color &#x3D; $color&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 调用</span><br><span class="line">Banana(20, &#39;yellow&#39;)</span><br><span class="line">    ..showWeight()</span><br><span class="line">    ..showColor();</span><br><span class="line">    </span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">weight &#x3D; 20</span><br><span class="line">color &#x3D; yellow</span><br></pre></td></tr></table></figure>
+<h3 id="控制流语句"><a class="header-anchor" href="#控制流语句">¶</a> 控制流语句</h3>
+<p>Dart中的控制流语句和其他语言一样，包含以下方式</p>
+<ul>
+<li>if and else</li>
+<li>for循环</li>
+<li>while和do-while循环</li>
+<li>break和continue</li>
+<li>switch-case语句<br>
+以上控制流语句和其他编程语言用法一样，switch-case有一个特殊的用法如下，可以使用continue语句和标签来执行指定case语句。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var fruit &#x3D; &#39;apple&#39;;</span><br><span class="line">switch (fruit) &#123;</span><br><span class="line">  case &#39;banana&#39;:</span><br><span class="line">    print(&quot;this is a banana&quot;);</span><br><span class="line">    continue anotherFruit;</span><br><span class="line">      </span><br><span class="line">  anotherFruit:</span><br><span class="line">  case &#39;apple&#39;:</span><br><span class="line">    print(&quot;this is an apple&quot;);</span><br><span class="line">    break;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">this is an apple</span><br></pre></td></tr></table></figure>
+<h3 id="异常"><a class="header-anchor" href="#异常">¶</a> 异常</h3>
+<p>Dart的异常捕获也是使用try-catch语法，不过与java等语言稍有不同</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 定义一个抛出异常的函数</span><br><span class="line">void handleOperator() &#x3D;&gt; throw Exception(&quot;this operator exception!&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 函数调用</span><br><span class="line">try &#123;</span><br><span class="line">  handleOperator();</span><br><span class="line">&#125; on Exception catch(e) &#123;</span><br><span class="line">  print(e);</span><br><span class="line">&#125; finally &#123; &#x2F;&#x2F; finally语句可选</span><br><span class="line">  print(&quot;finally&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">Exception: this operator exception!</span><br><span class="line">finally</span><br></pre></td></tr></table></figure>
+<h3 id="类"><a class="header-anchor" href="#类">¶</a> 类</h3>
+<p>Dart是一种面向对象的语言，具有类和基于mixin的继承。同Java一样，Dart的所有类也都继承自Object。</p>
+<h4 id="构造函数"><a class="header-anchor" href="#构造函数">¶</a> 构造函数</h4>
+<p>Dart的构造函数同普通函数一样，可以定义无参和有参，命名参数和位置参数，可选参数和给可选参数设置默认值等。Dart的构造函数有以下几个特点：</p>
+<ul>
+<li>可以定义命名构造函数</li>
+<li>可以在函数体运行之前初始化实例变量</li>
+<li>子类不从父类继承构造函数，定义没有构造函数的子类只有无参无名称的构造函数</li>
+<li>子类定义构造函数时默认继承父类无参构造函数，也可继承指定有参数的构造函数；</li>
+</ul>
+<p>命名构造函数和函数体运行前初始化实例变量</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 类定义</span><br><span class="line">class Tree &#123;</span><br><span class="line">  var desc;</span><br><span class="line">  </span><br><span class="line">  &#x2F;&#x2F; 命名构造函数</span><br><span class="line">  Tree.init() &#123;</span><br><span class="line">    desc &#x3D; &quot;this is a seed&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  &#x2F;&#x2F; 函数体运行之前初始化实例变量</span><br><span class="line">  Tree(var des) : desc &#x3D; des;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 构造函数调用</span><br><span class="line">Tree t &#x3D; Tree.init();</span><br><span class="line">print(&quot;$&#123;t.desc&#125;&quot;);</span><br><span class="line"></span><br><span class="line">Tree t1 &#x3D; Tree(&quot;this is a tree&quot;);</span><br><span class="line">print(&quot;$&#123;t1.desc&#125;&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">this is a seed</span><br><span class="line">this is a tree</span><br></pre></td></tr></table></figure>
+<p>构造函数继承</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 类定义</span><br><span class="line">class Fruit &#123;</span><br><span class="line">  Fruit() &#123;</span><br><span class="line">    print(&quot;this is Fruit constructor with no param&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  Fruit.desc(var desc) &#123;</span><br><span class="line">    print(&quot;$desc in Fruit&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Apple extends Fruit &#123;</span><br><span class="line">  Apple():super() &#123;</span><br><span class="line">    print(&quot;this is Apple constructor with no param&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  &#x2F;&#x2F; 默认继承无参构造函数</span><br><span class="line">  Apple.desc(var desc) &#123;</span><br><span class="line">    print(&#39;$desc in Apple&#39;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 构造函数调用</span><br><span class="line">Apple();</span><br><span class="line">Apple.desc(&quot;say hello&quot;);</span><br><span class="line">  </span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">this is Fruit constructor with no param</span><br><span class="line">this is Apple constructor with no param</span><br><span class="line">this is Fruit constructor with no param</span><br><span class="line">say hello in Apple</span><br></pre></td></tr></table></figure>
+<h4 id="mixin继承"><a class="header-anchor" href="#mixin继承">¶</a> mixin继承</h4>
+<p>mixin是一种在多个类层次结构中重用类代码的方法。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 类定义</span><br><span class="line">class LogUtil &#123;</span><br><span class="line">  void log() &#123;</span><br><span class="line">    print(&quot;this is a log&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Fruit &#123;</span><br><span class="line">  Fruit() &#123;</span><br><span class="line">    print(&quot;this is Fruit constructor with no param&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Apple extends Fruit with LogUtil &#123;</span><br><span class="line">  Apple():super() &#123;</span><br><span class="line">    print(&quot;this is Apple constructor with no param&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 调用</span><br><span class="line">Apple a &#x3D; Apple();</span><br><span class="line">a.log(); &#x2F;&#x2F;可执行从LogUtil继承过来的方法</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">this is Fruit constructor with no param</span><br><span class="line">this is Apple constructor with no param</span><br><span class="line">this is a log</span><br></pre></td></tr></table></figure>
+<h3 id="泛型"><a class="header-anchor" href="#泛型">¶</a> 泛型</h3>
+<p>Dart和java一样，支持泛型。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 类定义</span><br><span class="line">class Apple &#123;</span><br><span class="line">  var desc;</span><br><span class="line">  Apple(this.desc);</span><br><span class="line">  </span><br><span class="line">  void log() &#123;</span><br><span class="line">    print(&quot;$&#123;this.desc&#125;&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Banana &#123;</span><br><span class="line">  var desc;</span><br><span class="line">  Banana(this.desc);</span><br><span class="line">  </span><br><span class="line">  void log() &#123;</span><br><span class="line">    print(&quot;$&#123;this.desc&#125;&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class FruitFactory&lt;T&gt; &#123;</span><br><span class="line">  T produceFruit(T t) &#123;</span><br><span class="line">    return t;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 调用</span><br><span class="line">FruitFactory&lt;Banana&gt; f &#x3D; FruitFactory&lt;Banana&gt;();</span><br><span class="line">Banana b &#x3D; f.produceFruit(Banana(&quot;a banana&quot;));</span><br><span class="line">b.log();</span><br><span class="line">  </span><br><span class="line">FruitFactory&lt;Apple&gt; f1 &#x3D; FruitFactory&lt;Apple&gt;();</span><br><span class="line">Apple a &#x3D; f1.produceFruit(Apple(&quot;an apple&quot;));</span><br><span class="line">a.log();</span><br><span class="line">  </span><br><span class="line">&#x2F;&#x2F; 输出结果</span><br><span class="line">a banana</span><br><span class="line">an apple</span><br></pre></td></tr></table></figure>
+<h3 id="写在最后"><a class="header-anchor" href="#写在最后">¶</a> 写在最后</h3>
+<p>本文主要针对Dart不同于其他编程语言的一些语法特性进行了分析和举例，相信读过文本之后大家会对Dart语法有个很系统的了解，后边我们就可以开启Flutter应用开发之旅了。</p>
+<p><a href="https://mp.weixin.qq.com/s/lEUdry-pl40GuHPSYtPYpg" target="_blank" rel="noopener">本文转载自微信公众号:Flutter编程智能</a> ，这篇文章对我迅速了解Dart语言有很大的帮助，值得推荐！</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">]]></content>
+      <categories>
+        <category>Flutter</category>
+      </categories>
+      <tags>
+        <tag>Dart</tag>
+      </tags>
+  </entry>
 </search>
