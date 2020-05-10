@@ -1,8 +1,8 @@
-Webstack网址导航
-===
-### Demo: [➡️ www.webstack.cc](https://webstack.cc)
+# Vue版本
 
-QQ群交流：304584722 ; QQ交流群2：740911918
+[➡️ www.webstack.cc](https://webstack.cc) - 网址导航
+===
+QQ群交流：304584722
 
 本项目这是一个**纯静态**的网址导航网站，内容均由[viggo](http://viggoz.com)收集并整理。项目基于bootstrap前端框架开发。
 
@@ -79,7 +79,6 @@ JUST DOWNLOAD AND DO WHAT THE FUCK YOU WANT TO.
 | ✅已上线 | 卖家大全 - 最全卖家导航 | [http://maijiadaquan.com/](http://maijiadaquan.com/) |
 | ✅已上线 | 广告人导航 - 广告没门 | [https://adnodoor.com/nav/](https://adnodoor.com/nav/) |
 | ✅已上线 | 魔米导航 | [魔米导航 \- 精品网址导航](http://www.nmomi.com/) |
-| ✅已上线 | 互联网资源库房 | [库房369\-互联网资源库房 \-](https://kf369.cn/) |
 | ✅已上线 | 域名购买&域名商场&行业导航 | [http://www.yichushou.com/](http://www.yichushou.com/) |
 | ✅已上线 | 杏map | [http://xx-map.com/](http://xx-map.com/) |
 | ✅已上线 | DreamThere - 梦想导航 | [https://nav.dreamthere.com/](https://nav.dreamthere.com/) |
