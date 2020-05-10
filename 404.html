@@ -204,33 +204,104 @@
 </aside>
   
   <main id="main-contain" class="mdui-container mdui-m-t-5">
-    
-    
-    
-
-
-<div class="mdui-card mdui-p-a-4 mdui-m-b-5">
-    <div class="posts-collapse">
-        <div class="collection-title">
-            <h2>VUE<small>标签</small></h2>
-        </div>
-        
-            <div class="collection-item">
-                <h3><a href="/40535/">VUE是个啥？</a></h3>
-                <time itemprop="dateCreated" datetime=2020-03-08 >
-                    2020.03.08
-                </time>
-            </div>
-        
-            <div class="collection-item">
-                <h3><a href="/58375/">VUE的IDE推荐和项目结构大纲</a></h3>
-                <time itemprop="dateCreated" datetime=2020-02-08 >
-                    2020.02.08
-                </time>
-            </div>
-        
+    <div class="mdui-card mdui-p-b-2 mdui-m-b-5">
+    <div class="post-header"> 
+        <a class="post-header-title" href="/404.html"></a>
     </div>
-</div>
+    <div id="page-card" class="mdui-card-content mdui-p-x-4">
+        
+            <!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>arlin not found</title>
+
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      body {
+  background: #2196F3;
+}
+body h1 {
+  position: fixed;
+  text-align: center;
+  bottom: 10px;
+  left: 30px;
+  color: white;
+  font-size: 20px;
+  font-family: Roboto;
+  font-weight: normal;
+  z-index: 999;
+}
+body h1 span {
+  font-size: 15px;
+  font-weight: lighter;
+}
+body h1 a {
+  color: white;
+  font-size: 15px;
+  padding: 0 30px;
+}
+
+#notFound {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%) scale(1.2);
+  width: 80%;
+  height: auto;
+}
+
+    </style>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+  <script src='404/js/pixi.js'></script>
+
+  
+
+    <script  src="404/js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
+
+        </div>
+    </div>
+    
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '0aa16789343db1f501af',
+    clientSecret: '3db5fb720ab508ab78be7a31f071090dbe2ca21c',
+    repo: 'Arlinlol.github.io',
+    owner: 'Arlinlol',
+    admin: ['Arlinlol'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+    </div>
+
 
 
   </main>
