@@ -1343,6 +1343,26 @@ Dart有一个名为bool的类型，只有两个对象具有bool类型：true和f
 <p><em><strong>画板放大</strong></em>：按住<code>command</code>键，滚动鼠标滑轮，表示整体放大和缩小。<br><br>
 <em><strong>画板局部元素放大</strong></em>：按住<code>z</code>键，点击鼠标左键，即可实现局部元素的放大。或者框选即可实现放大。<br><br>
 <em><strong>移动画板</strong></em>：按住<code>空格</code>键，鼠标会变成抓手，即可移动画布。</p>
+<h4 id="画板的创建"><a class="header-anchor" href="#画板的创建">¶</a> 画板的创建</h4>
+<p>画板是在UI设计时最常用的页面设计工具，例如设计APP时候有很多个页面，在Sketch中一个文档可以创建无数个页面。<br><br>
+在选择的页面中选择的元素，可以跨画板进行拖拽。</p>
+<p><img src="/images/pasted-10.png" alt="upload successful"><br>
+也可以是 按住<code>a</code>间，在画布上自定义画，或者按照右侧的规范选择。</p>
+<h4 id="编组"><a class="header-anchor" href="#编组">¶</a> 编组</h4>
+<p>编组把若干个元素组合成为一个组，和PPT，PS中的分组是一个意思。快捷键为<code>ctrl+g</code></p>
+<h4 id="图形的编辑"><a class="header-anchor" href="#图形的编辑">¶</a> 图形的编辑</h4>
+<p>双击或者点击编辑按钮，单击可以添加锚点。完成编辑按回车键就可以对当前图形完成 。</p>
+<h3 id="布尔运算"><a class="header-anchor" href="#布尔运算">¶</a> 布尔运算</h3>
+<p><img src="/images/pasted-11.png" alt="upload successful"></p>
+<ol>
+<li>合并形状：得到几个形状区域的和。</li>
+<li>减去：得到上层和下层形状中的重叠部分。</li>
+<li>相交：得到两个形状重叠的部分。</li>
+<li>排除：去掉两个形状重叠的部分。</li>
+</ol>
+<blockquote>
+<p>注意：执行布尔运算后依然合一通过图层对其进行分开，我们可执行拼合命令使其转换为一个图形，在没有拼合之前可以在图层中选择图层展开后进行后续的修改，或者布尔类型的修改。一旦拼合后则不能进行修改。</p>
+</blockquote>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">]]></content>
       <categories>
         <category>前端设计</category>
