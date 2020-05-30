@@ -217,7 +217,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2020-05-13
+      更新于:&nbsp;2020-05-14
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -315,7 +315,9 @@
 <h3 id="基本操作"><a class="header-anchor" href="#基本操作">¶</a> 基本操作</h3>
 <p><em><strong>图层复制的方法</strong></em>：鼠标选中图形，按住<code>option/alt</code>键，拖动图形即可复制，如果需要图形复制过程中<code>强制水平</code>则需要同时按住<code>shift</code>键；<br><br>
 <em><strong>取色吸管</strong></em>：选中对象按<code>ctrl</code>+<code>c</code>即可调出取色吸管。<br><br>
-<em><strong>描边和填充快捷键</strong></em>：<code>b</code>取消描边，再按一下<code>b</code>有添加描边了，<code>f</code>取消填充，再按一下<code>f</code>又加上填充了。</p>
+<em><strong>描边和填充快捷键</strong></em>：<code>b</code>取消描边，再按一下<code>b</code>有添加描边了，<code>f</code>取消填充，再按一下<code>f</code>又加上填充了。<br>
+<em><strong>文字工具</strong></em>：<code>t</code>,输入文字即可。<br>
+<em><strong>钢笔工具</strong></em>：<code>v</code>,输入文字即可。</p>
 <h3 id="图形的属性"><a class="header-anchor" href="#图形的属性">¶</a> 图形的属性</h3>
 <h4 id="常规属性"><a class="header-anchor" href="#常规属性">¶</a> 常规属性</h4>
 <p><img src="/images/pasted-7.png" alt="upload successful"></p>
@@ -350,13 +352,61 @@
 <p><img src="/images/pasted-11.png" alt="upload successful"></p>
 <ol>
 <li>合并形状：得到几个形状区域的和。</li>
-<li>减去：得到上层和下层形状中的重叠部分。</li>
+<li>减去：去掉上层包括上层和下层形状中的重叠部分。</li>
 <li>相交：得到两个形状重叠的部分。</li>
 <li>排除：去掉两个形状重叠的部分。</li>
 </ol>
 <blockquote>
 <p>注意：执行布尔运算后依然合一通过图层对其进行分开，我们可执行拼合命令使其转换为一个图形，在没有拼合之前可以在图层中选择图层展开后进行后续的修改，或者布尔类型的修改。一旦拼合后则不能进行修改。</p>
 </blockquote>
+<p><img src="/images/pasted-13.png" alt="upload successful"></p>
+<p>模仿了几个图标进行布尔运算的应用：</p>
+<blockquote>
+<p>注意事项 还是需要多联系  主要是合并形状 和 减去的应用。</p>
+</blockquote>
+<h3 id="蒙版"><a class="header-anchor" href="#蒙版">¶</a> 蒙版</h3>
+<p>有两种蒙版，一个是图形蒙版，一个是透明度蒙版。</p>
+<h4 id="图形蒙版"><a class="header-anchor" href="#图形蒙版">¶</a> 图形蒙版</h4>
+<p><img src="/images/pasted-12.png" alt="upload successful"></p>
+<p><img src="/images/pasted-14.png" alt="upload successful"></p>
+<ol>
+<li>图片在上  图形在下</li>
+<li>两个元素分组，选择图形，执行图形蒙版。</li>
+<li>两个元素不分组，选择两个元素，执行图形蒙版。</li>
+</ol>
+<h4 id="透明度蒙版 alpha蒙版"><a class="header-anchor" href="#透明度蒙版 alpha蒙版">¶</a> 透明度蒙版 alpha蒙版</h4>
+<p><img src="/images/pasted-15.png" alt="upload successful"></p>
+<p>是将图形进行透明度蒙版的操作，倒影的效果。</p>
+<ol>
+<li>在图形下方创建一个矩形，矩形渐变色为黑色到黑色</li>
+<li>下侧的黑色透明度改为0</li>
+<li>复制图片，倒置镜像，拖动到矩形内</li>
+<li>选择矩形和图片，点击蒙版，即上边的倒影效果。</li>
+</ol>
+<h4 id="缩放（元素自身的大小变化）"><a class="header-anchor" href="#缩放（元素自身的大小变化）">¶</a> 缩放（元素自身的大小变化）</h4>
+<p><img src="/images/pasted-16.png" alt="upload successful"></p>
+<h4 id="旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）"><a class="header-anchor" href="#旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）">¶</a> 旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）</h4>
+<p><img src="/images/pasted-17.png" alt="upload successful"></p>
+<ol>
+<li>画一个圆形点击旋转复制按钮，选择6，则效果如上。</li>
+</ol>
+<h4 id="剪刀 去除元素"><a class="header-anchor" href="#剪刀 去除元素">¶</a> 剪刀 去除元素</h4>
+<p><img src="/images/pasted-18.png" alt="upload successful"><br>
+比如上图</p>
+<p>制作模仿的logo</p>
+<p><img src="/images/pasted-19.png" alt="upload successful"></p>
+<h4 id="钢笔、矢量工具"><a class="header-anchor" href="#钢笔、矢量工具">¶</a> 钢笔、矢量工具</h4>
+<ol>
+<li>直线 点击开始  按 下一个点  在按下一个点</li>
+<li>按住<code>command</code>键拖动操作。</li>
+</ol>
+<h4 id="转换为轮廓"><a class="header-anchor" href="#转换为轮廓">¶</a> 转换为轮廓</h4>
+<p>将钢笔(v)的路径属性转换为图形属性，也就是说转换好后可以为图形添加填充和描边的效果。</p>
+<h4 id="文字工具(t)"><a class="header-anchor" href="#文字工具(t)">¶</a> 文字工具(t)</h4>
+<p>快捷键是<code>t</code>,调整文字大小可以用<code>alt command</code>加<code>+</code>/<code>-</code>。</p>
+<h4 id="创建网格"><a class="header-anchor" href="#创建网格">¶</a> 创建网格</h4>
+<p>可以创建所选中的图形，按照行和列的方式进行复制，并可设定间距。<br>
+<img src="/images/pasted-20.png" alt="upload successful"></p>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
   </div>
   <!--文末结束语-->
@@ -368,6 +418,11 @@
   <div class="mdui-divider"></div>
   
   <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2918/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>java代码格式化模板（阿里代码规范）</span>
+      </a>
     
     
       <a rel="next" class="post-nav-item mdui-float-right" href="/31296/">
@@ -386,7 +441,7 @@
     <ul class="mdui-menu" id="toc">
       <li class="mdui-menu-item">
         <a href="/8684/" id="toc-header" class="mdui-ripple">文章目录</a>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本介绍"><span class="toc-number">1.</span> <span class="toc-text"> 基本介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#学习人群"><span class="toc-number">1.1.</span> <span class="toc-text"> 学习人群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发公司"><span class="toc-number">1.2.</span> <span class="toc-text"> 开发公司</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载和安装"><span class="toc-number">1.3.</span> <span class="toc-text"> 下载和安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件界面"><span class="toc-number">1.4.</span> <span class="toc-text"> 软件界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本形状绘制"><span class="toc-number">1.5.</span> <span class="toc-text"> 基本形状绘制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">1.6.</span> <span class="toc-text"> 基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图形的属性"><span class="toc-number">1.7.</span> <span class="toc-text"> 图形的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常规属性"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 常规属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#样式属性"><span class="toc-number">1.7.2.</span> <span class="toc-text"> 样式属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#填充（f）和描边（b）"><span class="toc-number">1.7.2.1.</span> <span class="toc-text"> 填充（f）和描边（b）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#阴影和内阴影"><span class="toc-number">1.7.3.</span> <span class="toc-text"> 阴影和内阴影</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模糊类型"><span class="toc-number">1.7.4.</span> <span class="toc-text"> 模糊类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#画板的创建和大小调整"><span class="toc-number">1.8.</span> <span class="toc-text"> 画板的创建和大小调整</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#画板的创建"><span class="toc-number">1.8.1.</span> <span class="toc-text"> 画板的创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编组"><span class="toc-number">1.8.2.</span> <span class="toc-text"> 编组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图形的编辑"><span class="toc-number">1.8.3.</span> <span class="toc-text"> 图形的编辑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布尔运算"><span class="toc-number">1.9.</span> <span class="toc-text"> 布尔运算</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本介绍"><span class="toc-number">1.</span> <span class="toc-text"> 基本介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#学习人群"><span class="toc-number">1.1.</span> <span class="toc-text"> 学习人群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发公司"><span class="toc-number">1.2.</span> <span class="toc-text"> 开发公司</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载和安装"><span class="toc-number">1.3.</span> <span class="toc-text"> 下载和安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件界面"><span class="toc-number">1.4.</span> <span class="toc-text"> 软件界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本形状绘制"><span class="toc-number">1.5.</span> <span class="toc-text"> 基本形状绘制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">1.6.</span> <span class="toc-text"> 基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图形的属性"><span class="toc-number">1.7.</span> <span class="toc-text"> 图形的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常规属性"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 常规属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#样式属性"><span class="toc-number">1.7.2.</span> <span class="toc-text"> 样式属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#填充（f）和描边（b）"><span class="toc-number">1.7.2.1.</span> <span class="toc-text"> 填充（f）和描边（b）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#阴影和内阴影"><span class="toc-number">1.7.3.</span> <span class="toc-text"> 阴影和内阴影</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模糊类型"><span class="toc-number">1.7.4.</span> <span class="toc-text"> 模糊类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#画板的创建和大小调整"><span class="toc-number">1.8.</span> <span class="toc-text"> 画板的创建和大小调整</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#画板的创建"><span class="toc-number">1.8.1.</span> <span class="toc-text"> 画板的创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编组"><span class="toc-number">1.8.2.</span> <span class="toc-text"> 编组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图形的编辑"><span class="toc-number">1.8.3.</span> <span class="toc-text"> 图形的编辑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布尔运算"><span class="toc-number">1.9.</span> <span class="toc-text"> 布尔运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#蒙版"><span class="toc-number">1.10.</span> <span class="toc-text"> 蒙版</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#图形蒙版"><span class="toc-number">1.10.1.</span> <span class="toc-text"> 图形蒙版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#透明度蒙版 alpha蒙版"><span class="toc-number">1.10.2.</span> <span class="toc-text"> 透明度蒙版 alpha蒙版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缩放（元素自身的大小变化）"><span class="toc-number">1.10.3.</span> <span class="toc-text"> 缩放（元素自身的大小变化）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）"><span class="toc-number">1.10.4.</span> <span class="toc-text"> 旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#剪刀 去除元素"><span class="toc-number">1.10.5.</span> <span class="toc-text"> 剪刀 去除元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#钢笔、矢量工具"><span class="toc-number">1.10.6.</span> <span class="toc-text"> 钢笔、矢量工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#转换为轮廓"><span class="toc-number">1.10.7.</span> <span class="toc-text"> 转换为轮廓</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文字工具(t)"><span class="toc-number">1.10.8.</span> <span class="toc-text"> 文字工具(t)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建网格"><span class="toc-number">1.10.9.</span> <span class="toc-text"> 创建网格</span></a></li></ol></li></ol></li></ol>
       </li>
     </ul>
   </div>

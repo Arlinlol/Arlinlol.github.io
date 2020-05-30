@@ -1321,7 +1321,9 @@ Dart有一个名为bool的类型，只有两个对象具有bool类型：true和f
 <h3 id="基本操作"><a class="header-anchor" href="#基本操作">¶</a> 基本操作</h3>
 <p><em><strong>图层复制的方法</strong></em>：鼠标选中图形，按住<code>option/alt</code>键，拖动图形即可复制，如果需要图形复制过程中<code>强制水平</code>则需要同时按住<code>shift</code>键；<br><br>
 <em><strong>取色吸管</strong></em>：选中对象按<code>ctrl</code>+<code>c</code>即可调出取色吸管。<br><br>
-<em><strong>描边和填充快捷键</strong></em>：<code>b</code>取消描边，再按一下<code>b</code>有添加描边了，<code>f</code>取消填充，再按一下<code>f</code>又加上填充了。</p>
+<em><strong>描边和填充快捷键</strong></em>：<code>b</code>取消描边，再按一下<code>b</code>有添加描边了，<code>f</code>取消填充，再按一下<code>f</code>又加上填充了。<br>
+<em><strong>文字工具</strong></em>：<code>t</code>,输入文字即可。<br>
+<em><strong>钢笔工具</strong></em>：<code>v</code>,输入文字即可。</p>
 <h3 id="图形的属性"><a class="header-anchor" href="#图形的属性">¶</a> 图形的属性</h3>
 <h4 id="常规属性"><a class="header-anchor" href="#常规属性">¶</a> 常规属性</h4>
 <p><img src="/images/pasted-7.png" alt="upload successful"></p>
@@ -1356,19 +1358,146 @@ Dart有一个名为bool的类型，只有两个对象具有bool类型：true和f
 <p><img src="/images/pasted-11.png" alt="upload successful"></p>
 <ol>
 <li>合并形状：得到几个形状区域的和。</li>
-<li>减去：得到上层和下层形状中的重叠部分。</li>
+<li>减去：去掉上层包括上层和下层形状中的重叠部分。</li>
 <li>相交：得到两个形状重叠的部分。</li>
 <li>排除：去掉两个形状重叠的部分。</li>
 </ol>
 <blockquote>
 <p>注意：执行布尔运算后依然合一通过图层对其进行分开，我们可执行拼合命令使其转换为一个图形，在没有拼合之前可以在图层中选择图层展开后进行后续的修改，或者布尔类型的修改。一旦拼合后则不能进行修改。</p>
 </blockquote>
+<p><img src="/images/pasted-13.png" alt="upload successful"></p>
+<p>模仿了几个图标进行布尔运算的应用：</p>
+<blockquote>
+<p>注意事项 还是需要多联系  主要是合并形状 和 减去的应用。</p>
+</blockquote>
+<h3 id="蒙版"><a class="header-anchor" href="#蒙版">¶</a> 蒙版</h3>
+<p>有两种蒙版，一个是图形蒙版，一个是透明度蒙版。</p>
+<h4 id="图形蒙版"><a class="header-anchor" href="#图形蒙版">¶</a> 图形蒙版</h4>
+<p><img src="/images/pasted-12.png" alt="upload successful"></p>
+<p><img src="/images/pasted-14.png" alt="upload successful"></p>
+<ol>
+<li>图片在上  图形在下</li>
+<li>两个元素分组，选择图形，执行图形蒙版。</li>
+<li>两个元素不分组，选择两个元素，执行图形蒙版。</li>
+</ol>
+<h4 id="透明度蒙版 alpha蒙版"><a class="header-anchor" href="#透明度蒙版 alpha蒙版">¶</a> 透明度蒙版 alpha蒙版</h4>
+<p><img src="/images/pasted-15.png" alt="upload successful"></p>
+<p>是将图形进行透明度蒙版的操作，倒影的效果。</p>
+<ol>
+<li>在图形下方创建一个矩形，矩形渐变色为黑色到黑色</li>
+<li>下侧的黑色透明度改为0</li>
+<li>复制图片，倒置镜像，拖动到矩形内</li>
+<li>选择矩形和图片，点击蒙版，即上边的倒影效果。</li>
+</ol>
+<h4 id="缩放（元素自身的大小变化）"><a class="header-anchor" href="#缩放（元素自身的大小变化）">¶</a> 缩放（元素自身的大小变化）</h4>
+<p><img src="/images/pasted-16.png" alt="upload successful"></p>
+<h4 id="旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）"><a class="header-anchor" href="#旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）">¶</a> 旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）</h4>
+<p><img src="/images/pasted-17.png" alt="upload successful"></p>
+<ol>
+<li>画一个圆形点击旋转复制按钮，选择6，则效果如上。</li>
+</ol>
+<h4 id="剪刀 去除元素"><a class="header-anchor" href="#剪刀 去除元素">¶</a> 剪刀 去除元素</h4>
+<p><img src="/images/pasted-18.png" alt="upload successful"><br>
+比如上图</p>
+<p>制作模仿的logo</p>
+<p><img src="/images/pasted-19.png" alt="upload successful"></p>
+<h4 id="钢笔、矢量工具"><a class="header-anchor" href="#钢笔、矢量工具">¶</a> 钢笔、矢量工具</h4>
+<ol>
+<li>直线 点击开始  按 下一个点  在按下一个点</li>
+<li>按住<code>command</code>键拖动操作。</li>
+</ol>
+<h4 id="转换为轮廓"><a class="header-anchor" href="#转换为轮廓">¶</a> 转换为轮廓</h4>
+<p>将钢笔(v)的路径属性转换为图形属性，也就是说转换好后可以为图形添加填充和描边的效果。</p>
+<h4 id="文字工具(t)"><a class="header-anchor" href="#文字工具(t)">¶</a> 文字工具(t)</h4>
+<p>快捷键是<code>t</code>,调整文字大小可以用<code>alt command</code>加<code>+</code>/<code>-</code>。</p>
+<h4 id="创建网格"><a class="header-anchor" href="#创建网格">¶</a> 创建网格</h4>
+<p>可以创建所选中的图形，按照行和列的方式进行复制，并可设定间距。<br>
+<img src="/images/pasted-20.png" alt="upload successful"></p>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">]]></content>
       <categories>
         <category>前端设计</category>
       </categories>
       <tags>
         <tag>Sketch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java代码格式化模板（阿里代码规范）</title>
+    <url>/2918/</url>
+    <content><![CDATA[<h3 id="文件准备"><a class="header-anchor" href="#文件准备">¶</a> 文件准备</h3>
+<p>网盘文件：链接：<a href="https://pan.baidu.com/s/1f56Ywufl8CdBHyc4b4fBQQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1f56Ywufl8CdBHyc4b4fBQQ</a><br>
+提取码：zneo</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p3c-formatter</td>
+<td>模板文件</td>
+</tr>
+<tr>
+<td>EclipseFormatter.zip</td>
+<td>idea插件</td>
+</tr>
+<tr>
+<td>阿里巴巴Java开发手册（详尽版）.pdf</td>
+<td>代码规范手册</td>
+</tr>
+</tbody>
+</table>
+<p>官方文件：</p>
+<p>格式化模板文件下载地址：<a href="https://github.com/alibaba/p3c/tree/master/p3c-formatter" target="_blank" rel="noopener">https://github.com/alibaba/p3c/tree/master/p3c-formatter</a></p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eclipse-codestyle.xml</td>
+<td>代码格式化时用的模板</td>
+</tr>
+<tr>
+<td>eclipse-codetemplate.xml</td>
+<td>注释模板</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/pasted-21.png" alt="upload successful"></p>
+<h3 id="eclipse 格式化设置"><a class="header-anchor" href="#eclipse 格式化设置">¶</a> eclipse 格式化设置</h3>
+<h4 id="1. 格式化模板导入"><a class="header-anchor" href="#1. 格式化模板导入">¶</a> 1. 格式化模板导入</h4>
+<ul>
+<li>依次点击：Window-&gt;Preferences-&gt;Java-&gt;Code Style-&gt;Formatter-&gt;Import</li>
+<li>选择eclipse-codestyle.xml文件确定</li>
+<li>默认在Active profile中选择新导入的P3C-CodeStyle，如未选择，请手动选择</li>
+<li>点击Apply完成配置</li>
+</ul>
+<p><img src="/images/pasted-22.png" alt="upload successful"></p>
+<h4 id="2. 注释模板导入"><a class="header-anchor" href="#2. 注释模板导入">¶</a> 2. 注释模板导入</h4>
+<ul>
+<li>操作流程同上，Window-&gt;Preferences-&gt;Java-&gt;Code Style-&gt;Code Templates-&gt;Import</li>
+<li>勾选Automatically add comments for new methods and types</li>
+<li>点击Apply完成配置</li>
+</ul>
+<p><img src="/images/pasted-23.png" alt="upload successful"></p>
+<h4 id="3.properties文件编码UTF-8"><a class="header-anchor" href="#3.properties文件编码UTF-8">¶</a> 3.properties文件编码UTF-8</h4>
+<ul>
+<li>Window-&gt;Preferences-&gt;General-&gt;Content Types-&gt;Text-&gt;Java Properties File</li>
+<li>将Java Properties File及下属的所有项均设定为 Default encoding: UTF-8</li>
+</ul>
+<p><img src="/images/pasted-24.png" alt="upload successful"></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">]]></content>
+      <categories>
+        <category>IDE</category>
+      </categories>
+      <tags>
+        <tag>eclipseformatter</tag>
       </tags>
   </entry>
 </search>
