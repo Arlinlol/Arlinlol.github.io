@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/images/pasted-0.png">
+    
+    
+    
+<link rel="stylesheet" href="/css/mdui.min.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            Sketch软件学习笔记 | Silicon-based Life
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Silicon-based Life</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">赋予硅基生命能力，说简单点就是码农。</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">首页</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/images/pasted-0.png"/>
+                
+            </div>
+            <div class="sidebar-author-name">arlin</div>
+            <div class="sidebar-description">说简单点就是码农</div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-twitter"></i></span>
+                    <a href="https://twitter.com/ledanzu" target="_blank" rel="noopener" class="mdui-chip-title">t</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-facebook"></i></span>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" class="mdui-chip-title">f</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a href="https://github.com/Arlinlol" target="_blank" rel="noopener" class="mdui-chip-title">g</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a href="https://storm-f.github.io/" target="_blank" rel="noopener" class="mdui-list-item mdui-ripple">
+                            F同学
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/8684/">Sketch软件学习笔记</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2020-05-12
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2020-05-14
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1/">前端设计</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Sketch软件学习笔记&url=http://arlin.wang/8684/&pic=http://arlin.wang/images/pasted-0.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Sketch软件学习笔记&url=http://arlin.wang/8684/&via=arlin" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://arlin.wang/8684/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://arlin.wang/8684/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://arlin.wang/8684/&title=Sketch软件学习笔记" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Silicon-based Life&title=Sketch软件学习笔记&summary=说简单点就是码农&pics=http://arlin.wang/images/pasted-0.png&url=http://arlin.wang/8684/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://arlin.wang/8684/&text=Sketch软件学习笔记" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/Sketch/ >Sketch</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h2 id="基本介绍"><a class="header-anchor" href="#基本介绍">¶</a> 基本介绍</h2>
+<h3 id="学习人群"><a class="header-anchor" href="#学习人群">¶</a> 学习人群</h3>
+<ol>
+<li>移动界面设计师、UI设计师</li>
+<li>交互设计师</li>
+<li>产品经理</li>
+<li>移动端开发工程师 bingo!</li>
+</ol>
+<h3 id="开发公司"><a class="header-anchor" href="#开发公司">¶</a> 开发公司</h3>
+<ul>
+<li>国家：荷兰 海牙</li>
+<li>出自：Bohemiancoding</li>
+<li>官网：<a href="https://www.sketchapp.com" target="_blank" rel="noopener">https://www.sketchapp.com</a></li>
+</ul>
+<h3 id="下载和安装"><a class="header-anchor" href="#下载和安装">¶</a> 下载和安装</h3>
+<p>官网下载</p>
+<p><a href="https://pan.baidu.com/s/1gfAApof" target="_blank" rel="noopener">汉化包密码:<code>g8be</code></a><br>
+汉化包下载后双击，安装，再打开Sketch软件后在工具栏的插件，点击<code>工具</code>-&gt;<code>sketch l18n</code>即可切换中英文版本。</p>
+<h3 id="软件界面"><a class="header-anchor" href="#软件界面">¶</a> 软件界面</h3>
+<p><img src="/images/pasted-4.png" alt="upload successful"></p>
+<ul>
+<li>工具栏(工具箱)<br>
+可以进行拖拽图标，或者拖拽设定好的栏目，这个非常人性化。<br>
+工具栏包括了skech的所有工具</li>
+</ul>
+<p><img src="/images/pasted-5.png" alt="upload successful"></p>
+<h3 id="基本形状绘制"><a class="header-anchor" href="#基本形状绘制">¶</a> 基本形状绘制</h3>
+<p><img src="/images/pasted-6.png" alt="upload successful"></p>
+<p><em><strong>对应快捷键</strong></em>：矩形<code>r</code>,圆形<code>o</code>,圆角矩形<code>u</code>,线条<code>l</code>，<br>
+如果需要的是正方形则<code>r</code>+<code>shift</code>，如果需要正圆形<code>o</code>+<code>shift</code>，如果需要正圆角矩形则<code>u</code>+<code>shift</code>,如果需要直线则<code>l</code>+<code>shift</code></p>
+<p>如果希望所画的图形不是从右上角开始，而是从中心点开始扩散，则需要按<code>shift</code>+<code>option/alt</code>键即可。</p>
+<h3 id="基本操作"><a class="header-anchor" href="#基本操作">¶</a> 基本操作</h3>
+<p><em><strong>图层复制的方法</strong></em>：鼠标选中图形，按住<code>option/alt</code>键，拖动图形即可复制，如果需要图形复制过程中<code>强制水平</code>则需要同时按住<code>shift</code>键；<br><br>
+<em><strong>取色吸管</strong></em>：选中对象按<code>ctrl</code>+<code>c</code>即可调出取色吸管。<br><br>
+<em><strong>描边和填充快捷键</strong></em>：<code>b</code>取消描边，再按一下<code>b</code>有添加描边了，<code>f</code>取消填充，再按一下<code>f</code>又加上填充了。<br>
+<em><strong>文字工具</strong></em>：<code>t</code>,输入文字即可。<br>
+<em><strong>钢笔工具</strong></em>：<code>v</code>,输入文字即可。</p>
+<h3 id="图形的属性"><a class="header-anchor" href="#图形的属性">¶</a> 图形的属性</h3>
+<h4 id="常规属性"><a class="header-anchor" href="#常规属性">¶</a> 常规属性</h4>
+<p><img src="/images/pasted-7.png" alt="upload successful"></p>
+<h4 id="样式属性"><a class="header-anchor" href="#样式属性">¶</a> 样式属性</h4>
+<h5 id="填充（f）和描边（b）"><a class="header-anchor" href="#填充（f）和描边（b）">¶</a> 填充（f）和描边（b）</h5>
+<p>注意如果删除一个填充的时候，要点掉对应填充前面的✔️，再点击垃圾桶图标即删除了一个图层的填充。</p>
+<p><img src="/images/pasted-8.png" alt="upload successful"></p>
+<h4 id="阴影和内阴影"><a class="header-anchor" href="#阴影和内阴影">¶</a> 阴影和内阴影</h4>
+<p>比较容易理解</p>
+<h4 id="模糊类型"><a class="header-anchor" href="#模糊类型">¶</a> 模糊类型</h4>
+<p><img src="/images/pasted-9.png" alt="upload successful"></p>
+<ol>
+<li>高斯模糊：常用，将选择的图形进行模糊化处理。</li>
+<li>动感模糊：选择的图形进行动感模糊，可以调整角度。</li>
+<li>放大模糊：姜选择图形以中心向四周模糊化处理。</li>
+<li>背景模糊：可以制作苹果系统下的磨砂模糊效果（色块为白色，并且需要将填充不透明度调整为60%方可实现效果）</li>
+</ol>
+<h3 id="画板的创建和大小调整"><a class="header-anchor" href="#画板的创建和大小调整">¶</a> 画板的创建和大小调整</h3>
+<p><em><strong>画板放大</strong></em>：按住<code>command</code>键，滚动鼠标滑轮，表示整体放大和缩小。<br><br>
+<em><strong>画板局部元素放大</strong></em>：按住<code>z</code>键，点击鼠标左键，即可实现局部元素的放大。或者框选即可实现放大。<br><br>
+<em><strong>移动画板</strong></em>：按住<code>空格</code>键，鼠标会变成抓手，即可移动画布。</p>
+<h4 id="画板的创建"><a class="header-anchor" href="#画板的创建">¶</a> 画板的创建</h4>
+<p>画板是在UI设计时最常用的页面设计工具，例如设计APP时候有很多个页面，在Sketch中一个文档可以创建无数个页面。<br><br>
+在选择的页面中选择的元素，可以跨画板进行拖拽。</p>
+<p><img src="/images/pasted-10.png" alt="upload successful"><br>
+也可以是 按住<code>a</code>间，在画布上自定义画，或者按照右侧的规范选择。</p>
+<h4 id="编组"><a class="header-anchor" href="#编组">¶</a> 编组</h4>
+<p>编组把若干个元素组合成为一个组，和PPT，PS中的分组是一个意思。快捷键为<code>ctrl+g</code></p>
+<h4 id="图形的编辑"><a class="header-anchor" href="#图形的编辑">¶</a> 图形的编辑</h4>
+<p>双击或者点击编辑按钮，单击可以添加锚点。完成编辑按回车键就可以对当前图形完成 。</p>
+<h3 id="布尔运算"><a class="header-anchor" href="#布尔运算">¶</a> 布尔运算</h3>
+<p><img src="/images/pasted-11.png" alt="upload successful"></p>
+<ol>
+<li>合并形状：得到几个形状区域的和。</li>
+<li>减去：去掉上层包括上层和下层形状中的重叠部分。</li>
+<li>相交：得到两个形状重叠的部分。</li>
+<li>排除：去掉两个形状重叠的部分。</li>
+</ol>
+<blockquote>
+<p>注意：执行布尔运算后依然合一通过图层对其进行分开，我们可执行拼合命令使其转换为一个图形，在没有拼合之前可以在图层中选择图层展开后进行后续的修改，或者布尔类型的修改。一旦拼合后则不能进行修改。</p>
+</blockquote>
+<p><img src="/images/pasted-13.png" alt="upload successful"></p>
+<p>模仿了几个图标进行布尔运算的应用：</p>
+<blockquote>
+<p>注意事项 还是需要多联系  主要是合并形状 和 减去的应用。</p>
+</blockquote>
+<h3 id="蒙版"><a class="header-anchor" href="#蒙版">¶</a> 蒙版</h3>
+<p>有两种蒙版，一个是图形蒙版，一个是透明度蒙版。</p>
+<h4 id="图形蒙版"><a class="header-anchor" href="#图形蒙版">¶</a> 图形蒙版</h4>
+<p><img src="/images/pasted-12.png" alt="upload successful"></p>
+<p><img src="/images/pasted-14.png" alt="upload successful"></p>
+<ol>
+<li>图片在上  图形在下</li>
+<li>两个元素分组，选择图形，执行图形蒙版。</li>
+<li>两个元素不分组，选择两个元素，执行图形蒙版。</li>
+</ol>
+<h4 id="透明度蒙版 alpha蒙版"><a class="header-anchor" href="#透明度蒙版 alpha蒙版">¶</a> 透明度蒙版 alpha蒙版</h4>
+<p><img src="/images/pasted-15.png" alt="upload successful"></p>
+<p>是将图形进行透明度蒙版的操作，倒影的效果。</p>
+<ol>
+<li>在图形下方创建一个矩形，矩形渐变色为黑色到黑色</li>
+<li>下侧的黑色透明度改为0</li>
+<li>复制图片，倒置镜像，拖动到矩形内</li>
+<li>选择矩形和图片，点击蒙版，即上边的倒影效果。</li>
+</ol>
+<h4 id="缩放（元素自身的大小变化）"><a class="header-anchor" href="#缩放（元素自身的大小变化）">¶</a> 缩放（元素自身的大小变化）</h4>
+<p><img src="/images/pasted-16.png" alt="upload successful"></p>
+<h4 id="旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）"><a class="header-anchor" href="#旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）">¶</a> 旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）</h4>
+<p><img src="/images/pasted-17.png" alt="upload successful"></p>
+<ol>
+<li>画一个圆形点击旋转复制按钮，选择6，则效果如上。</li>
+</ol>
+<h4 id="剪刀 去除元素"><a class="header-anchor" href="#剪刀 去除元素">¶</a> 剪刀 去除元素</h4>
+<p><img src="/images/pasted-18.png" alt="upload successful"><br>
+比如上图</p>
+<p>制作模仿的logo</p>
+<p><img src="/images/pasted-19.png" alt="upload successful"></p>
+<h4 id="钢笔、矢量工具"><a class="header-anchor" href="#钢笔、矢量工具">¶</a> 钢笔、矢量工具</h4>
+<ol>
+<li>直线 点击开始  按 下一个点  在按下一个点</li>
+<li>按住<code>command</code>键拖动操作。</li>
+</ol>
+<h4 id="转换为轮廓"><a class="header-anchor" href="#转换为轮廓">¶</a> 转换为轮廓</h4>
+<p>将钢笔(v)的路径属性转换为图形属性，也就是说转换好后可以为图形添加填充和描边的效果。</p>
+<h4 id="文字工具(t)"><a class="header-anchor" href="#文字工具(t)">¶</a> 文字工具(t)</h4>
+<p>快捷键是<code>t</code>,调整文字大小可以用<code>alt command</code>加<code>+</code>/<code>-</code>。</p>
+<h4 id="创建网格"><a class="header-anchor" href="#创建网格">¶</a> 创建网格</h4>
+<p>可以创建所选中的图形，按照行和列的方式进行复制，并可设定间距。<br>
+<img src="/images/pasted-20.png" alt="upload successful"></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2918/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>java代码格式化模板（阿里代码规范）</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/31296/">
+        <span>Dart是个啥，一文了解！</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/8684/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本介绍"><span class="toc-number">1.</span> <span class="toc-text"> 基本介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#学习人群"><span class="toc-number">1.1.</span> <span class="toc-text"> 学习人群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发公司"><span class="toc-number">1.2.</span> <span class="toc-text"> 开发公司</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载和安装"><span class="toc-number">1.3.</span> <span class="toc-text"> 下载和安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件界面"><span class="toc-number">1.4.</span> <span class="toc-text"> 软件界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本形状绘制"><span class="toc-number">1.5.</span> <span class="toc-text"> 基本形状绘制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">1.6.</span> <span class="toc-text"> 基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图形的属性"><span class="toc-number">1.7.</span> <span class="toc-text"> 图形的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常规属性"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 常规属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#样式属性"><span class="toc-number">1.7.2.</span> <span class="toc-text"> 样式属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#填充（f）和描边（b）"><span class="toc-number">1.7.2.1.</span> <span class="toc-text"> 填充（f）和描边（b）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#阴影和内阴影"><span class="toc-number">1.7.3.</span> <span class="toc-text"> 阴影和内阴影</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模糊类型"><span class="toc-number">1.7.4.</span> <span class="toc-text"> 模糊类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#画板的创建和大小调整"><span class="toc-number">1.8.</span> <span class="toc-text"> 画板的创建和大小调整</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#画板的创建"><span class="toc-number">1.8.1.</span> <span class="toc-text"> 画板的创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编组"><span class="toc-number">1.8.2.</span> <span class="toc-text"> 编组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图形的编辑"><span class="toc-number">1.8.3.</span> <span class="toc-text"> 图形的编辑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布尔运算"><span class="toc-number">1.9.</span> <span class="toc-text"> 布尔运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#蒙版"><span class="toc-number">1.10.</span> <span class="toc-text"> 蒙版</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#图形蒙版"><span class="toc-number">1.10.1.</span> <span class="toc-text"> 图形蒙版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#透明度蒙版 alpha蒙版"><span class="toc-number">1.10.2.</span> <span class="toc-text"> 透明度蒙版 alpha蒙版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缩放（元素自身的大小变化）"><span class="toc-number">1.10.3.</span> <span class="toc-text"> 缩放（元素自身的大小变化）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）"><span class="toc-number">1.10.4.</span> <span class="toc-text"> 旋转复制（自定义工具栏中找到旋转复制按钮拖动到工具栏中）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#剪刀 去除元素"><span class="toc-number">1.10.5.</span> <span class="toc-text"> 剪刀 去除元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#钢笔、矢量工具"><span class="toc-number">1.10.6.</span> <span class="toc-text"> 钢笔、矢量工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#转换为轮廓"><span class="toc-number">1.10.7.</span> <span class="toc-text"> 转换为轮廓</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文字工具(t)"><span class="toc-number">1.10.8.</span> <span class="toc-text"> 文字工具(t)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建网格"><span class="toc-number">1.10.9.</span> <span class="toc-text"> 创建网格</span></a></li></ol></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '0aa16789343db1f501af',
+    clientSecret: '3db5fb720ab508ab78be7a31f071090dbe2ca21c',
+    repo: 'Arlinlol.github.io',
+    owner: 'Arlinlol',
+    admin: ['Arlinlol'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        arlin
+      </span>
+    </div>
+    <!--<div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div> -->
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+<script src="/js/mdui.min.js"></script>
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

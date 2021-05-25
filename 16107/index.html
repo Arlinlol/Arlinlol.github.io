@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/images/pasted-0.png">
+    
+    
+    
+<link rel="stylesheet" href="/css/mdui.min.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            Go语言笔记 | Silicon-based Life
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Silicon-based Life</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">赋予硅基生命能力，说简单点就是码农。</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">首页</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/images/pasted-0.png"/>
+                
+            </div>
+            <div class="sidebar-author-name">arlin</div>
+            <div class="sidebar-description">说简单点就是码农</div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-twitter"></i></span>
+                    <a href="https://twitter.com/ledanzu" target="_blank" rel="noopener" class="mdui-chip-title">t</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-facebook"></i></span>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" class="mdui-chip-title">f</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a href="https://github.com/Arlinlol" target="_blank" rel="noopener" class="mdui-chip-title">g</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a href="https://storm-f.github.io/" target="_blank" rel="noopener" class="mdui-list-item mdui-ripple">
+                            F同学
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/16107/">Go语言笔记</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2018-11-07
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2020-05-08
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Go语言笔记&url=http://arlin.wang/16107/&pic=http://arlin.wang/images/pasted-0.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Go语言笔记&url=http://arlin.wang/16107/&via=arlin" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://arlin.wang/16107/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://arlin.wang/16107/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://arlin.wang/16107/&title=Go语言笔记" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Silicon-based Life&title=Go语言笔记&summary=说简单点就是码农&pics=http://arlin.wang/images/pasted-0.png&url=http://arlin.wang/16107/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://arlin.wang/16107/&text=Go语言笔记" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/Go/ >Go</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <p>这是我在2018年低记得笔记，放在这里记录一下。</p>
+<h1 id="GO语言的安装"><a class="header-anchor" href="#GO语言的安装">¶</a> GO语言的安装</h1>
+<p>今天学习GO语言的动力是想参与到https://github.com/fatedier/frp 这个项目中来<br>
+参考资料:</p>
+<ol>
+<li>安装包下载：<a href="http://www.golangtc.com/download" target="_blank" rel="noopener">http://www.golangtc.com/download</a></li>
+<li>GO的安装：<a href="http://docscn.studygolang.com/doc/install" target="_blank" rel="noopener">http://docscn.studygolang.com/doc/install</a></li>
+<li>搭建Go开发及调试环境（LiteIDE + GoClipse） – Windows篇：<a href="http://www.cnblogs.com/custa/p/3913526.html" target="_blank" rel="noopener">http://www.cnblogs.com/custa/p/3913526.html</a></li>
+<li>GO语言指南:<a href="https://tour.go-zh.org/list" target="_blank" rel="noopener">https://tour.go-zh.org/list</a></li>
+<li>GO语言文档:<a href="http://docscn.studygolang.com/doc/" target="_blank" rel="noopener">http://docscn.studygolang.com/doc/</a></li>
+<li>GO语言教程:<a href="http://www.runoob.com/w3cnote/wx-xcx-repo.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/wx-xcx-repo.html</a></li>
+</ol>
+<h2 id="安装描述： Windows 系统下安装"><a class="header-anchor" href="#安装描述： Windows 系统下安装">¶</a> 安装描述： Windows 系统下安装</h2>
+<p>Windows 下可以使用 .msi后缀(在下载列表中可以找到该文件，如:go1.7.3.windows-amd64.msi)的安装包来安装。<br>
+默认情况下.msi文件会安装在 c:\Go 目录下。你可以将 c:\Go\bin 目录添加到 PATH 环境变量中。添加后你需要重启命令窗口才能生效</p>
+<blockquote>
+<p>设置GOROOT变量与GO安装路径一致。</p>
+</blockquote>
+<h2 id="安装测试"><a class="header-anchor" href="#安装测试">¶</a> 安装测试</h2>
+<ol>
+<li>创建工作目录 C:\&gt;Go_WorkSpace。</li>
+<li>文件名: test.go，代码如下：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">   fmt.Println(&quot;Hello, World!&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>使用 go 命令执行以上代码输出结果如下：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Go_WorkSpace&gt;go run test.go</span><br><span class="line"></span><br><span class="line">Hello, World!</span><br></pre></td></tr></table></figure>
+<h1 id="GO的语言结构"><a class="header-anchor" href="#GO的语言结构">¶</a> GO的语言结构</h1>
+<pre><code>Go 语言最简单程序的结构
+</code></pre>
+<ul>
+<li>包声明</li>
+<li>引入包</li>
+<li>函数</li>
+<li>变量</li>
+<li>语句 &amp; 表达式</li>
+<li>注释</li>
+</ul>
+<p>下面来看一段程序代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;第一行代码 package main 定义了包名。你必须在源文件中非注释的第一行指明这个文件属于哪个包，如：package main。</span><br><span class="line">&#x2F;&#x2F;package main表示一个可独立执行的程序，每个 Go 应用程序都包含一个名为 main 的包。</span><br><span class="line">package main</span><br><span class="line">&#x2F;&#x2F;下一行 import &quot;fmt&quot; 告诉 Go 编译器这个程序需要使用 fmt 包（的函数，或其他元素），fmt 包实现了格式化 IO（输入&#x2F;输出）的函数。</span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line">&#x2F;&#x2F;下一行 func main() 是程序开始执行的函数。main 函数是每一个可执行程序所必须包含的，一般来说都是在启动后第一个执行的函数（如果有 init() 函数则会先执行该函数）。</span><br><span class="line">func main() &#123;</span><br><span class="line">   &#x2F;&#x2F;这是一个单行注释</span><br><span class="line">   &#x2F;* 多行注释 这是我的第一个简单的程序 *&#x2F;</span><br><span class="line">   &#x2F;&#x2F;下一行 fmt.Println(...) 可以将字符串输出到控制台，并在最后自动增加换行字符 \n。 </span><br><span class="line">   &#x2F;&#x2F;使用 fmt.Print(&quot;hello, world\n&quot;) 可以得到相同的结果。 </span><br><span class="line">   &#x2F;&#x2F;Print 和 Println 这两个函数也支持使用变量，如：fmt.Println(arr)。如果没有特别指定，它们会以默认的打印格式将变量 arr 输出到控制台。</span><br><span class="line">   fmt.Println(&quot;Hello, World!&quot;)</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* 语言特点:</span><br><span class="line">当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头，如：Group1，那么使用这种形式的标识符的对象就可以被外部包的代码所使用（客户端程序需要先导入这个包），这被称为导出（像面向对象语言中的 public）；标识符如果以小写字母开头，则对包外是不可见的，但是他们在整个包的内部是可见并且可用的（像面向对象语言中的 private ）。</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+<h2 id="执行 Go 程序"><a class="header-anchor" href="#执行 Go 程序">¶</a> 执行 Go 程序</h2>
+<ul>
+<li>打开编辑器如Sublime2，将以上代码添加到编辑器中。</li>
+<li>将以上代码保存为 hello.go</li>
+<li>打开命令行，并进入程序文件保存的目录中。</li>
+<li>输入命令 go run hello.go 并按回车执行代码。</li>
+<li>如果操作正确你将在屏幕上看到 “Hello World!” 字样的输出。</li>
+</ul>
+<h1 id="GO语言的基础语法"><a class="header-anchor" href="#GO语言的基础语法">¶</a> GO语言的基础语法</h1>
+<h2 id="Go 标记"><a class="header-anchor" href="#Go 标记">¶</a> Go 标记</h2>
+<p>Go 程序可以由多个标记组成，可以是关键字，标识符，常量，字符串，符号。如以下 GO 语句由 6 个标记组成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(&quot;Hello, World!&quot;)</span><br></pre></td></tr></table></figure>
+<p>6个标记是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. fmt</span><br><span class="line">2. .</span><br><span class="line">3. Println</span><br><span class="line">4. (</span><br><span class="line">5. &quot;Hello, World!&quot;</span><br><span class="line">6. )</span><br></pre></td></tr></table></figure>
+<h2 id="行分隔符"><a class="header-anchor" href="#行分隔符">¶</a> 行分隔符</h2>
+<p>在 Go 程序中，一行代表一个语句结束。每个语句不需要像 C 家族中的其它语言一样以分号 ; 结尾，因为这些工作都将由 Go 编译器自动完成。<br>
+如果你打算将多个语句写在同一行，它们则必须使用 ; 人为区分，但在实际开发中我们并不鼓励这种做法。<br>
+以下为两个语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(&quot;Hello, World!&quot;)</span><br><span class="line">fmt.Println(&quot;GO教程：blog.ledanzu.com&quot;)</span><br></pre></td></tr></table></figure>
+<h2 id="注释"><a class="header-anchor" href="#注释">¶</a> 注释</h2>
+<p>注释不会被编译，每一个包应该有相关注释。<br>
+单行注释是最常见的注释形式，你可以在任何地方使用以 // 开头的单行注释。多行注释也叫块注释，均已以 /* 开头，并以 */ 结尾。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 单行注释</span><br><span class="line">&#x2F;*</span><br><span class="line"> Author by arlin.wang</span><br><span class="line"> 我是多行注释</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+<h2 id="标识符"><a class="header-anchor" href="#标识符">¶</a> 标识符</h2>
+<p>标识符用来命名变量、类型等程序实体。一个标识符实际上就是一个或是多个字母(A<sub>Z和a</sub>z)数字(0~9)、下划线_组成的序列，但是第一个字符必须是字母或下划线而不能是数字。<br>
+以下是有效的标识符：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mahesh   kumar   abc   move_name   a_123</span><br><span class="line">myname50   _temp   j   a23b9   retVal</span><br></pre></td></tr></table></figure>
+<p>以下是无效的标识符：</p>
+<ul>
+<li>1ab（以数字开头）</li>
+<li>case（Go 语言的关键字）</li>
+<li>a+b（运算符是不允许的）</li>
+</ul>
+<h2 id="关键字"><a class="header-anchor" href="#关键字">¶</a> 关键字</h2>
+<p>下面列举了 Go 代码中会使用到的 25 个关键字或保留字：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>名称</th>
+<th>描述</th>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>break</td>
+<td>跳出</td>
+<td>default</td>
+<td>默认</td>
+<td>func</td>
+<td>函数</td>
+</tr>
+<tr>
+<td>interface</td>
+<td>接口</td>
+<td>select</td>
+<td></td>
+<td>case</td>
+<td>比较</td>
+</tr>
+<tr>
+<td>defer</td>
+<td></td>
+<td>go</td>
+<td></td>
+<td>map</td>
+<td>键值对</td>
+</tr>
+<tr>
+<td>struct</td>
+<td></td>
+<td>chan</td>
+<td></td>
+<td>else</td>
+<td>否则</td>
+</tr>
+<tr>
+<td>goto</td>
+<td>跳转</td>
+<td>package</td>
+<td>包定义</td>
+<td>switch</td>
+<td>开关</td>
+</tr>
+<tr>
+<td>const</td>
+<td>常量</td>
+<td>fallthrough</td>
+<td></td>
+<td>if</td>
+<td>如果</td>
+</tr>
+<tr>
+<td>range</td>
+<td></td>
+<td>type</td>
+<td>类型</td>
+<td>continue</td>
+<td>继续</td>
+</tr>
+<tr>
+<td>for</td>
+<td>O(∩_∩)O</td>
+<td>import</td>
+<td>引入</td>
+<td>return</td>
+<td>返回</td>
+</tr>
+<tr>
+<td>var</td>
+<td>变量</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>除了以上介绍的这些关键字，Go 语言还有 36 个预定义标识符：</p>
+<table>
+<thead>
+<tr>
+<th>append</th>
+<th>bool</th>
+<th>byte</th>
+<th>cap</th>
+<th>close</th>
+<th>complex</th>
+<th>complex64</th>
+<th>complex128</th>
+<th>uint16</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>copy</td>
+<td>false</td>
+<td>float32</td>
+<td>float64</td>
+<td>imag</td>
+<td>int</td>
+<td>int8</td>
+<td>int16</td>
+<td>uint32</td>
+</tr>
+<tr>
+<td>int32</td>
+<td>int64</td>
+<td>iota</td>
+<td>len</td>
+<td>make</td>
+<td>new</td>
+<td>nil</td>
+<td>panic</td>
+<td>uint64</td>
+</tr>
+<tr>
+<td>print</td>
+<td>println</td>
+<td>real</td>
+<td>recover</td>
+<td>string</td>
+<td>true</td>
+<td>uint</td>
+<td>uint8</td>
+<td>uintptr</td>
+</tr>
+</tbody>
+</table>
+<p>程序一般由关键字、常量、变量、运算符、类型和函数组成。<br>
+程序中可能会使用到这些分隔符：括号 ()，中括号 [] 和大括号 {}。<br>
+程序中可能会使用到这些标点符号：.、,、;、: 和 …。</p>
+<h2 id="Go 语言的空格"><a class="header-anchor" href="#Go 语言的空格">¶</a> Go 语言的空格</h2>
+<p>Go 语言中变量的声明必须使用空格隔开，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var age int;</span><br></pre></td></tr></table></figure>
+<p>语句中适当使用空格能让程序看易阅读。<br>
+无空格：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fruit&#x3D;apples+oranges;</span><br></pre></td></tr></table></figure>
+<p>在变量与运算符间加入空格，程序看起来更加美观，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fruit &#x3D; apples + oranges;</span><br></pre></td></tr></table></figure>
+<h1 id="Go 语言数据类型"><a class="header-anchor" href="#Go 语言数据类型">¶</a> Go 语言数据类型</h1>
+<p>在 Go 编程语言中，数据类型用于声明函数和变量。<br>
+数据类型的出现是为了把数据分成所需内存大小不同的数据，编程的时候需要用大数据的时候才需要申请大内存，就可以充分利用内存。<br>
+Go 语言按类别有以下几种数据类型：</p>
+<h2 id="布尔类型 bool"><a class="header-anchor" href="#布尔类型 bool">¶</a> 布尔类型 bool</h2>
+<p>布尔型的值只可以是常量 true 或者 false。一个简单的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var b bool &#x3D; true</span><br></pre></td></tr></table></figure>
+<h2 id="数字类型"><a class="header-anchor" href="#数字类型">¶</a> 数字类型</h2>
+<p>整型 int 和浮点型 float，Go 语言支持整型和浮点型数字，并且原生支持复数，其中位的运算采用补码。</p>
+<p>Go 也有基于架构的类型，例如：int、uint 和 uintptr。</p>
+<h3 id="整型:"><a class="header-anchor" href="#整型:">¶</a> 整型:</h3>
+<h5 id="uint8"><a class="header-anchor" href="#uint8">¶</a> uint8</h5>
+<p>无符号 8 位整型 (0 到 255)</p>
+<h5 id="uint16"><a class="header-anchor" href="#uint16">¶</a> uint16</h5>
+<p>无符号 16 位整型 (0 到 65535)</p>
+<h5 id="uint32"><a class="header-anchor" href="#uint32">¶</a> uint32</h5>
+<p>无符号 32 位整型 (0 到 4294967295)</p>
+<h5 id="uint64"><a class="header-anchor" href="#uint64">¶</a> uint64</h5>
+<p>无符号 64 位整型 (0 到 18446744073709551615)</p>
+<h5 id="int8"><a class="header-anchor" href="#int8">¶</a> int8</h5>
+<p>有符号 8 位整型 (-128 到 127)</p>
+<h5 id="int16"><a class="header-anchor" href="#int16">¶</a> int16</h5>
+<p>有符号 16 位整型 (-32768 到 32767)</p>
+<h5 id="int32"><a class="header-anchor" href="#int32">¶</a> int32</h5>
+<p>有符号 32 位整型 (-2147483648 到 2147483647)</p>
+<h5 id="int64"><a class="header-anchor" href="#int64">¶</a> int64</h5>
+<p>有符号 64 位整型 (-9223372036854775808 到 9223372036854775807)</p>
+<h3 id="浮点型："><a class="header-anchor" href="#浮点型：">¶</a> 浮点型：</h3>
+<h5 id="float32"><a class="header-anchor" href="#float32">¶</a> float32</h5>
+<p>IEEE-754 32位浮点型数</p>
+<h5 id="float64"><a class="header-anchor" href="#float64">¶</a> float64</h5>
+<p>IEEE-754 64位浮点型数</p>
+<h5 id="complex64"><a class="header-anchor" href="#complex64">¶</a> complex64</h5>
+<p>32 位实数和虚数</p>
+<h5 id="complex128"><a class="header-anchor" href="#complex128">¶</a> complex128</h5>
+<p>64 位实数和虚数</p>
+<h3 id="其他数字类型："><a class="header-anchor" href="#其他数字类型：">¶</a> 其他数字类型：</h3>
+<h5 id="byte"><a class="header-anchor" href="#byte">¶</a> byte</h5>
+<p>类似 uint8</p>
+<h5 id="rune"><a class="header-anchor" href="#rune">¶</a> rune</h5>
+<p>类似 int32</p>
+<h5 id="uint"><a class="header-anchor" href="#uint">¶</a> uint</h5>
+<p>32 或 64 位</p>
+<h5 id="int"><a class="header-anchor" href="#int">¶</a> int</h5>
+<p>与 uint 一样大小</p>
+<h5 id="uintptr"><a class="header-anchor" href="#uintptr">¶</a> uintptr</h5>
+<p>无符号整型，用于存放一个指针</p>
+<h1 id="GO语言变量"><a class="header-anchor" href="#GO语言变量">¶</a> GO语言变量</h1>
+<p>变量来源于数学，是计算机语言中能储存计算结果或能表示值抽象概念。变量可以通过变量名访问。<br>
+Go 语言变量名由字母、数字、下划线组成，其中首个字母不能为数字。<br>
+声明变量的一般形式是使用 var 关键字：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var identifier type</span><br><span class="line">&#x2F;&#x2F;例如</span><br><span class="line">var a int</span><br></pre></td></tr></table></figure>
+<h3 id="变量声明"><a class="header-anchor" href="#变量声明">¶</a> 变量声明</h3>
+<ol>
+<li>指定变量类型，声明后没有赋值则使用默认值；</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var v_name v_type</span><br><span class="line">v_name &#x3D; value</span><br><span class="line">&#x2F;&#x2F;例如</span><br><span class="line">var a int</span><br><span class="line">a &#x3D; 10</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>根据值自行判断变量类型；也就是弱类型声明。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var v_name &#x3D; value</span><br><span class="line">&#x2F;&#x2F;例如</span><br><span class="line">var int &#x3D; 10</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>省略var，注意:=左侧的变量不应该是已经声明过的，否则会导致编译错误。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">v_name :&#x3D; value</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 例如</span><br><span class="line">var a int &#x3D; 10</span><br><span class="line">var b &#x3D; 10</span><br><span class="line">c : &#x3D; 10</span><br></pre></td></tr></table></figure>
+<p>示例如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line">var a &#x3D; &quot;arlin 是个好人&quot;</span><br><span class="line">var b string &#x3D; &quot;arlin.wang&quot;</span><br><span class="line">var c bool</span><br><span class="line"></span><br><span class="line">func main()&#123;</span><br><span class="line">    println(a,b,c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arlin 是个好人 arlin.wang false</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><mark>注意：由于有中文，采用记事本编辑默认是ANSI码上一段代码报错</mark></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># command-line-arguments</span><br><span class="line">.\indentifier_type.go:3: illegal UTF-8 sequence</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我的解决办法是用notpadd++编辑，报错格式为UTF-8</p>
+</blockquote>
+<h3 id="多变量声明"><a class="header-anchor" href="#多变量声明">¶</a> 多变量声明</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;类型相同多个变量, 非全局变量</span><br><span class="line">var vname1, vname2, vname3 type</span><br><span class="line">vname1, vname2, vname3 &#x3D; v1, v2, v3</span><br><span class="line"></span><br><span class="line">var vname1, vname2, vname3 &#x3D; v1, v2, v3 &#x2F;&#x2F;和python很像,不需要显示声明类型，自动推断</span><br><span class="line"></span><br><span class="line">vname1, vname2, vname3 :&#x3D; v1, v2, v3 &#x2F;&#x2F;出现在:&#x3D;左侧的变量不应该是已经被声明过的，否则会导致编译错误</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 这种因式分解关键字的写法一般用于声明全局变量</span><br><span class="line">var (</span><br><span class="line">    vname1 v_type1</span><br><span class="line">    vname2 v_type2</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>实例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">var x,y int </span><br><span class="line">var ( &#x2F;&#x2F;主意是括号()而不是大括号&#123;&#125;</span><br><span class="line">  a int</span><br><span class="line">  b bool</span><br><span class="line">)</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">var c,d int &#x3D; 1,2</span><br><span class="line">var e,f &#x3D; 123,&quot;arlin&quot;</span><br><span class="line"></span><br><span class="line">func main()&#123;</span><br><span class="line">    &#x2F;&#x2F;这种不带声明格式的只能在函数体中出现</span><br><span class="line">    g,h :&#x3D;123,&quot;arlin&quot;</span><br><span class="line">    println(x,y,a,b,c,d,e,f,g,h)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 0 0 false 1 2 123 arlin 123 arlin</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：var ( a int b bool) 是() 而不是{}</p>
+</blockquote>
+<h3 id="值类型和引用类型"><a class="header-anchor" href="#值类型和引用类型">¶</a> 值类型和引用类型</h3>
+<p>所有像 int、float、bool 和 string 这些基本类型都属于值类型，使用这些类型的变量直接指向存在内存中的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"> 整形i --&gt;7</span><br></pre></td></tr></table></figure>
+<p>当使用等号 = 将一个变量的值赋值给另一个变量时，如：j = i，实际上是在内存中将 i 的值进行了拷贝：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">整形i--&gt;7</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">整形j--&gt;7</span><br></pre></td></tr></table></figure>
+<p>你可以通过 &amp;i 来获取变量 i 的内存地址，例如：0xf840000040（每次的地址都可能不一样）。值类型的变量的值存储在栈中。</p>
+<p>内存地址会根据机器的不同而有所不同，甚至相同的程序在不同的机器上执行后也会有不同的内存地址。因为每台机器可能有不同的存储器布局，并且位置分配也可能不同。</p>
+<p>更复杂的数据通常会需要使用多个字，这些数据一般使用引用类型保存。</p>
+<p>一个引用类型的变量 r1 存储的是 r1 的值所在的内存地址（数字），或内存地址中第一个字所在的位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">ref引用r1 --&gt; 内存地址1</span><br><span class="line">ref引用r2 --&gt; 内存地址1</span><br><span class="line">内存地址1--&gt; r1的值</span><br></pre></td></tr></table></figure>
+<p>这个内存地址为称之为指针，这个指针实际上也被存在另外的某一个字中。</p>
+<p>同一个引用类型的指针指向的多个字可以是在连续的内存地址中（内存布局是连续的），这也是计算效率最高的一种存储形式；也可以将这些字分散存放在内存中，每个字都指示了下一个字所在的内存地址。</p>
+<p>当使用赋值语句 r2 = r1 时，只有引用（地址）被复制。<br>
+如果 r1 的值被改变了，那么这个值的所有引用都会指向被修改后的内容，在这个例子中，r2 也会受到影响。</p>
+<hr>
+<h3 id="简短形式，使用:=赋值操作符"><a class="header-anchor" href="#简短形式，使用:=赋值操作符">¶</a> 简短形式，使用:=赋值操作符</h3>
+<p>我们知道可以在变量的初始化时省略变量的类型而由系统自动推断，声明语句写上 var 关键字其实是显得有些多余了，因此我们可以将它们简写为 a := 50 或 b := false。</p>
+<p>a 和 b 的类型（int 和 bool）将由编译器自动推断。<br>
+这是使用变量的首选形式，但是它只能被用在函数体内，而不可以用于全局变量的声明与赋值。使用操作符 := 可以高效地创建一个新的变量，称之为初始化声明。</p>
+<h5 id="注意事项"><a class="header-anchor" href="#注意事项">¶</a> 注意事项</h5>
+<p>如果在相同的代码块中，我们不可以再次对于相同名称的变量使用初始化声明，例如：a := 20 就是不被允许的，编译器会提示错误 no new variables on left side of :=，但是 a = 20 是可以的，因为这是给相同的变量赋予一个新的值。<br>
+如果你在定义变量 a 之前使用它，则会得到编译错误 undefined: a。</p>
+<p>如果你声明了一个局部变量却没有在相同的代码块中使用它，同样会得到编译错误，例如下面这个例子当中的变量 a：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func main() &#123;</span><br><span class="line">   var a string &#x3D; &quot;abc&quot;</span><br><span class="line">   fmt.Println(&quot;hello, world&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>尝试编译这段代码将得到错误 a declared and not used。<br>
+此外，单纯地给 a 赋值也是不够的，这个值必须被使用，所以使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func main() &#123;</span><br><span class="line">   var a string &#x3D; &quot;abc&quot;</span><br><span class="line">   fmt.Println(&quot;hello, world&quot;,a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是全局变量是允许声明后不使用的。</p>
+<p>同一类型的多个变量可以在同一行声明和赋值如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a , b, c int &#x3D; 1,2,3</span><br></pre></td></tr></table></figure>
+<p>多变量可以在同一行进行赋值,如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b ,c ,d &#x3D; 5,7,&quot;abc&quot;</span><br></pre></td></tr></table></figure>
+<p>上面这行假设了变量 b，c 和 d 都已经被声明，否则的话应该这样使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b, c ,d:&#x3D; 5, 7, &quot;abc&quot;</span><br></pre></td></tr></table></figure>
+<p>这被称为 并行 或 同时 赋值。</p>
+<p>如果你想要交换两个变量的值，则可以简单地使用 a, b = b, a。</p>
+<p><strong>空白标识符 _ 也被用于抛弃值，如值 5 在：_, b = 5, 7 中被抛弃。</strong></p>
+<p>_ 实际上是一个只写变量，你不能得到它的值。这样做是因为 Go 语言中你必须使用所有被声明的变量，但有时你并不需要使用从一个函数得到的所有返回值。</p>
+<p><strong>并行赋值也被用于当一个函数返回多个返回值时，比如这里的 val 和错误 err 是通过调用 Func1 函数同时得到：val, err = Func1(var1)。</strong></p>
+<h1 id="Go语言常量"><a class="header-anchor" href="#Go语言常量">¶</a> Go语言常量</h1>
+<p>常量是一个简单值的标识符，在程序运行时，不会被修改的量。</p>
+<p>常量中的数据类型只可以是布尔型、数字型（整数型、浮点型和复数）和字符串型。</p>
+<p>常量的定义格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const identifier [type] &#x3D; value</span><br></pre></td></tr></table></figure>
+<p>你可以省略类型说明符 [type]，因为编译器可以根据变量的值来推断其类型。</p>
+<ul>
+<li>显式类型定义： const b string = “abc”</li>
+<li>隐式类型定义： const b = “abc”</li>
+</ul>
+<p>多个相同类型的声明可以简写为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const c_name1, c_name2 &#x3D; value1, value2</span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main()&#123;</span><br><span class="line">    const LENGTH int &#x3D; 10</span><br><span class="line">    const WIDTH int &#x3D; 5</span><br><span class="line">    var area int </span><br><span class="line">    const a,b,c &#x3D; 1,false,&quot;str&quot;</span><br><span class="line">    area &#x3D; LENGTH * WIDTH</span><br><span class="line">    fmt.Printf(&quot;面积为 : %d&quot;,area)&#x2F;&#x2F;格式化输出</span><br><span class="line">    println()&#x2F;&#x2F;换行等同于\n  可以省略fmt.</span><br><span class="line">    fmt.Println(a,b,c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">面积为 : 50</span><br><span class="line">1 false str</span><br></pre></td></tr></table></figure>
+<p>常量还可以用作枚举:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;数字 0、1 和 2 分别代表未知性别、女性和男性。</span><br><span class="line">const (</span><br><span class="line">    Unknown &#x3D; 0</span><br><span class="line">    Female &#x3D; 1</span><br><span class="line">    Male &#x3D; 2</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>常量可以用len(), cap(), unsafe.Sizeof()常量计算表达式的值。常量表达式中，函数必须是内置函数，否则编译不过：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;unsafe&quot;</span><br><span class="line">const (</span><br><span class="line">    a &#x3D; &quot;abc&quot;</span><br><span class="line">    b &#x3D; len(a)</span><br><span class="line">    &#x2F;&#x2F;查看变量所占字节数。</span><br><span class="line">    c &#x3D; unsafe.Sizeof(a)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main()&#123;</span><br><span class="line">    println(a, b, c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abc 3 16</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>unsafe 库让 golang 可以像 C 语言一样操作计算机内存，但这并不是 golang 推荐使用的，能不用尽量不用，就像它的名字所表达的一样，它绕过了golang的内存安全原则，是不安全的，容易使你的程序出现莫名其妙的问题，不利于程序的扩展与维护。</p>
+</blockquote>
+<h3 id="iota 常量"><a class="header-anchor" href="#iota 常量">¶</a> iota 常量</h3>
+<p>iota，特殊常量，可以认为是一个可以被编译器修改的常量。</p>
+<p>在每一个const关键字出现时，被重置为0，然后再下一个const出现之前，每出现一次iota，其所代表的数字会自动增加1。<br>
+iota 可以被用作枚举值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    a &#x3D; iota</span><br><span class="line">    b &#x3D; iota</span><br><span class="line">    c &#x3D; iota</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1；所以 a=0, b=1, c=2 可以简写为如下形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    a &#x3D; iota</span><br><span class="line">    b</span><br><span class="line">    c</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h5 id="iota用法"><a class="header-anchor" href="#iota用法">¶</a> iota用法</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main()&#123;</span><br><span class="line">	const (</span><br><span class="line">		a &#x3D; iota &#x2F;&#x2F;0</span><br><span class="line">		b        &#x2F;&#x2F;1</span><br><span class="line">		c        &#x2F;&#x2F;2</span><br><span class="line">		d &#x3D; &quot;ha&quot; &#x2F;&#x2F;独立值,iota +&#x3D;1</span><br><span class="line">		e        &#x2F;&#x2F;&quot;ha&quot;  ,iota +&#x3D;1</span><br><span class="line">		f &#x3D; 100  &#x2F;&#x2F;100   ,iota +&#x3D;1</span><br><span class="line">		g        &#x2F;&#x2F;100   ,iota +&#x3D;1</span><br><span class="line">		h &#x3D; iota &#x2F;&#x2F;7,恢复计数</span><br><span class="line">		i        &#x2F;&#x2F;8</span><br><span class="line">	)</span><br><span class="line">	fmt.Println(a,b,c,d,e,f,g,h,i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 ha ha 100 100 7 8</span><br></pre></td></tr></table></figure>
+<p>实例二：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">const (</span><br><span class="line">	i&#x3D;1&lt;&lt;iota</span><br><span class="line">	j&#x3D;3&lt;&lt;iota</span><br><span class="line">	k</span><br><span class="line">	l</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main()&#123;</span><br><span class="line">	fmt.Println(&quot;i&#x3D;&quot;,i)</span><br><span class="line">	fmt.Println(&quot;j&#x3D;&quot;,j)</span><br><span class="line">	fmt.Println(&quot;k&#x3D;&quot;,k)</span><br><span class="line">	fmt.Println(&quot;l&#x3D;&quot;,l)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i&#x3D; 1</span><br><span class="line">j&#x3D; 6</span><br><span class="line">k&#x3D; 12</span><br><span class="line">l&#x3D; 24</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>iota表示从0开始自动加1，所以i=1&lt;&lt;0,j=3&lt;&lt;1（&lt;&lt;表示左移的意思），即：i=1,j=6，这没问题，关键在k和l，从输出结果看，k=3&lt;&lt;2，l=3&lt;&lt; 3。</p>
+</blockquote>
+<h1 id="GO语言运算符"><a class="header-anchor" href="#GO语言运算符">¶</a> GO语言运算符</h1>
+<p>运算符用于在程序运行时执行数学或逻辑运算，有：</p>
+<ul>
+<li>算术运算符</li>
+<li>关系运算符</li>
+<li>逻辑运算符</li>
+<li>位运算符</li>
+<li>赋值运算符</li>
+<li>其他运算符</li>
+</ul>
+<h3 id="算术运算符"><a class="header-anchor" href="#算术运算符">¶</a> 算术运算符</h3>
+<p>下表列出了所有Go语言的算术运算符。假定 A 值为 10，B 值为 20。</p>
+<table>
+<thead>
+<tr>
+<th>运算符号</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>相加</td>
+<td>A + B 输出结果 30</td>
+</tr>
+<tr>
+<td>-</td>
+<td>相减</td>
+<td>A - B 输出结果 -10</td>
+</tr>
+<tr>
+<td>*</td>
+<td>相乘</td>
+<td>A * B 输出结果 200</td>
+</tr>
+<tr>
+<td>/</td>
+<td>相除</td>
+<td>B / A 输出结果 2</td>
+</tr>
+<tr>
+<td>%</td>
+<td>求余</td>
+<td>B % A 输出结果 0</td>
+</tr>
+<tr>
+<td>++</td>
+<td>自增</td>
+<td>A++ 输出结果 11</td>
+</tr>
+<tr>
+<td>–</td>
+<td>自减</td>
+<td>A-- 输出结果 9</td>
+</tr>
+</tbody>
+</table>
+<p>以下实例演示了各个算术运算符的用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">   var a int &#x3D; 21</span><br><span class="line">   var b int &#x3D; 10</span><br><span class="line">   var c int</span><br><span class="line"></span><br><span class="line">   c &#x3D; a + b</span><br><span class="line">   fmt.Printf(&quot;第一行 - c 的值为 %d\n&quot;, c )</span><br><span class="line">   c &#x3D; a - b</span><br><span class="line">   fmt.Printf(&quot;第二行 - c 的值为 %d\n&quot;, c )</span><br><span class="line">   c &#x3D; a * b</span><br><span class="line">   fmt.Printf(&quot;第三行 - c 的值为 %d\n&quot;, c )</span><br><span class="line">   c &#x3D; a &#x2F; b</span><br><span class="line">   fmt.Printf(&quot;第四行 - c 的值为 %d\n&quot;, c )</span><br><span class="line">   c &#x3D; a % b</span><br><span class="line">   fmt.Printf(&quot;第五行 - c 的值为 %d\n&quot;, c )</span><br><span class="line">   a++</span><br><span class="line">   fmt.Printf(&quot;第六行 - c 的值为 %d\n&quot;, a )</span><br><span class="line">   a--</span><br><span class="line">   fmt.Printf(&quot;第七行 - c 的值为 %d\n&quot;, a )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">第一行 - c 的值为 31</span><br><span class="line">第二行 - c 的值为 11</span><br><span class="line">第三行 - c 的值为 210</span><br><span class="line">第四行 - c 的值为 2</span><br><span class="line">第五行 - c 的值为 1</span><br><span class="line">第六行 - c 的值为 22</span><br><span class="line">第七行 - c 的值为 21</span><br></pre></td></tr></table></figure>
+<h3 id="关系运算符"><a class="header-anchor" href="#关系运算符">¶</a> 关系运算符</h3>
+<p>下表列出了所有Go语言的关系运算符。假定 A 值为 10，B 值为 20。</p>
+<table>
+<thead>
+<tr>
+<th>运算符号</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td>检查两个值是否相等，如果相等返回 True 否则返回 False。</td>
+<td>(A == B) 为 False</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>检查两个值是否不相等，如果不相等返回 True 否则返回 False。</td>
+<td>(A != B) 为 True</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>检查左边值是否大于右边值，如果是返回 True 否则返回 False。</td>
+<td>(A &gt; B) 为 False</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>检查左边值是否小于右边值，如果是返回 True 否则返回 False。</td>
+<td>(A &lt; B) 为 True</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>检查左边值是否大于等于右边值，如果是返回 True 否则返回 False。</td>
+<td>(A &gt;= B) 为 False</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>检查左边值是否小于等于右边值，如果是返回 True 否则返回 False。</td>
+<td>(A &lt;= B) 为 True</td>
+</tr>
+</tbody>
+</table>
+<p>以下实例演示了关系运算符的用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">   var a int &#x3D; 21</span><br><span class="line">   var b int &#x3D; 10</span><br><span class="line"></span><br><span class="line">   if( a &#x3D;&#x3D; b ) &#123;</span><br><span class="line">      fmt.Printf(&quot;第一行 - a 等于 b\n&quot; )</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">      fmt.Printf(&quot;第一行 - a 不等于 b\n&quot; )</span><br><span class="line">   &#125;</span><br><span class="line">   if ( a &lt; b ) &#123;</span><br><span class="line">      fmt.Printf(&quot;第二行 - a 小于 b\n&quot; )</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">      fmt.Printf(&quot;第二行 - a 不小于 b\n&quot; )</span><br><span class="line">   &#125; </span><br><span class="line">   </span><br><span class="line">   if ( a &gt; b ) &#123;</span><br><span class="line">      fmt.Printf(&quot;第三行 - a 大于 b\n&quot; )</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">      fmt.Printf(&quot;第三行 - a 不大于 b\n&quot; )</span><br><span class="line">   &#125;</span><br><span class="line">   &#x2F;* Lets change value of a and b *&#x2F;</span><br><span class="line">   a &#x3D; 5</span><br><span class="line">   b &#x3D; 20</span><br><span class="line">   if ( a &lt;&#x3D; b ) &#123;</span><br><span class="line">      fmt.Printf(&quot;第四行 - a 小于等于  b\n&quot; )</span><br><span class="line">   &#125;</span><br><span class="line">   if ( b &gt;&#x3D; a ) &#123;</span><br><span class="line">      fmt.Printf(&quot;第五行 - b 大于等于 b\n&quot; )</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第一行 - a 不等于 b</span><br><span class="line">第二行 - a 不小于 b</span><br><span class="line">第三行 - a 大于 b</span><br><span class="line">第四行 - a 小于等于  b</span><br><span class="line">第五行 - b 大于等于 b</span><br></pre></td></tr></table></figure>
+<h3 id="逻辑运算符"><a class="header-anchor" href="#逻辑运算符">¶</a> 逻辑运算符</h3>
+<p>下表列出了所有Go语言的逻辑运算符。假定 A 值为 True，B 值为 False。</p>
+<table>
+<thead>
+<tr>
+<th>运算符号</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;&amp;</td>
+<td>逻辑 AND 运算符。 如果两边的操作数都是 True，则条件 True，否则为 False。</td>
+<td>(A &amp;&amp; B) 为 False</td>
+</tr>
+<tr>
+<td>||</td>
+<td>逻辑 OR 运算符。 如果两边的操作数有一个 True，则条件 True，否则为 False。</td>
+<td>(A</td>
+</tr>
+<tr>
+<td>|</td>
+<td>逻辑 NOT 运算符。 如果条件为 True，则逻辑 NOT 条件 False，否则为 True。</td>
+<td>!(A &amp;&amp; B) 为 True</td>
+</tr>
+</tbody>
+</table>
+<p>以下实例演示了逻辑运算符的用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">   var a bool &#x3D; true</span><br><span class="line">   var b bool &#x3D; false</span><br><span class="line">   if ( a &amp;&amp; b ) &#123;</span><br><span class="line">      fmt.Printf(&quot;第一行 - 条件为 true\n&quot; )</span><br><span class="line">   &#125;</span><br><span class="line">   if ( a || b ) &#123;</span><br><span class="line">      fmt.Printf(&quot;第二行 - 条件为 true\n&quot; )</span><br><span class="line">   &#125;</span><br><span class="line">   &#x2F;* 修改 a 和 b 的值 *&#x2F;</span><br><span class="line">   a &#x3D; false</span><br><span class="line">   b &#x3D; true</span><br><span class="line">   if ( a &amp;&amp; b ) &#123;</span><br><span class="line">      fmt.Printf(&quot;第三行 - 条件为 true\n&quot; )</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">      fmt.Printf(&quot;第三行 - 条件为 false\n&quot; )</span><br><span class="line">   &#125;</span><br><span class="line">   if ( !(a &amp;&amp; b) ) &#123;</span><br><span class="line">      fmt.Printf(&quot;第四行 - 条件为 true\n&quot; )</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上实例运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第二行 - 条件为 true</span><br><span class="line">第三行 - 条件为 false</span><br><span class="line">第四行 - 条件为 true</span><br></pre></td></tr></table></figure>
+<h3 id="位运算符"><a class="header-anchor" href="#位运算符">¶</a> 位运算符</h3>
+<p>位运算符对整数在内存中的二进制位进行操作。</p>
+<p>下表列出了位运算符 &amp;, |, 和 ^ 的计算：</p>
+<table>
+<thead>
+<tr>
+<th>p</th>
+<th>q</th>
+<th>p &amp; q</th>
+<th>p | q</th>
+<th>p ^ q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>假定 A = 60; B = 13; 其二进制数转换为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">A &#x3D; 0011 1100</span><br><span class="line">B &#x3D; 0000 1101</span><br><span class="line"></span><br><span class="line">-----------------</span><br><span class="line">A&amp;B &#x3D; 0000 1100</span><br><span class="line">A|B &#x3D; 0011 1101</span><br><span class="line">A^B &#x3D; 0011 0001</span><br><span class="line">~A  &#x3D; 1100 0011</span><br></pre></td></tr></table></figure>
+<p>C 语言支持的位运算符如下表所示。假定 A 为60，B 为13：</p>
+<table>
+<thead>
+<tr>
+<th>运算符号</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;</td>
+<td>按位与运算符&quot;&amp;&quot;是双目运算符。 其功能是参与运算的两数各对应的二进位相与。</td>
+<td>(A &amp; B) 结果为 12, 二进制为 0000 1100</td>
+</tr>
+<tr>
+<td>|</td>
+<td>按位或运算符&quot;|&quot;是双目运算符。 其功能是参与运算的两数各对应的二进位相或</td>
+<td>(A | B) 结果为 61, 二进制为 0011 1101</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或运算符&quot;^&quot;是双目运算符。 其功能是参与运算的两数各对应的二进位相异或，当两对应的二进位相异时，结果为1。</td>
+<td>(A ^ B) 结果为 49, 二进制为 0011 0001</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>左移运算符&quot;&lt;&lt;&quot;是双目运算符。左移n位就是乘以2的n次方。</td>
+<td>A &lt;&lt; 2 结果为 240 ，二进制为 1111 0000 其功能把&quot;&lt;&lt;“左边的运算数的各二进位全部左移若干位，由”&lt;&lt;&quot;右边的数指定移动的位数，高位丢弃，低位补0。</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移运算符&quot;&gt;&gt;“是双目运算符。右移n位就是除以2的n次方。 其功能是把”&gt;&gt;“左边的运算数的各二进位全部右移若干位，”&gt;&gt;&quot;右边的数指定移动的位数。</td>
+<td>A &gt;&gt; 2 结果为 15 ，二进制为 0000 1111</td>
+</tr>
+</tbody>
+</table>
+<p>以下实例演示了逻辑运算符的用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line"></span><br><span class="line">   var a uint &#x3D; 60	&#x2F;* 60 &#x3D; 0011 1100 *&#x2F;  </span><br><span class="line">   var b uint &#x3D; 13	&#x2F;* 13 &#x3D; 0000 1101 *&#x2F;</span><br><span class="line">   var c uint &#x3D; 0          </span><br><span class="line"></span><br><span class="line">   c &#x3D; a &amp; b       &#x2F;* 12 &#x3D; 0000 1100 *&#x2F; </span><br><span class="line">   fmt.Printf(&quot;第一行 - c 的值为 %d\n&quot;, c )</span><br><span class="line"></span><br><span class="line">   c &#x3D; a | b       &#x2F;* 61 &#x3D; 0011 1101 *&#x2F;</span><br><span class="line">   fmt.Printf(&quot;第二行 - c 的值为 %d\n&quot;, c )</span><br><span class="line"></span><br><span class="line">   c &#x3D; a ^ b       &#x2F;* 49 &#x3D; 0011 0001 *&#x2F;</span><br><span class="line">   fmt.Printf(&quot;第三行 - c 的值为 %d\n&quot;, c )</span><br><span class="line"></span><br><span class="line">   c &#x3D; a &lt;&lt; 2     &#x2F;* 240 &#x3D; 1111 0000 *&#x2F;</span><br><span class="line">   fmt.Printf(&quot;第四行 - c 的值为 %d\n&quot;, c )</span><br><span class="line"></span><br><span class="line">   c &#x3D; a &gt;&gt; 2     &#x2F;* 15 &#x3D; 0000 1111 *&#x2F;</span><br><span class="line">   fmt.Printf(&quot;第五行 - c 的值为 %d\n&quot;, c )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第一行 - c 的值为 12</span><br><span class="line">第二行 - c 的值为 61</span><br><span class="line">第三行 - c 的值为 49</span><br><span class="line">第四行 - c 的值为 240</span><br><span class="line">第五行 - c 的值为 15</span><br></pre></td></tr></table></figure>
+<h3 id="赋值运算符"><a class="header-anchor" href="#赋值运算符">¶</a> 赋值运算符</h3>
+<p><a href="http://www.runoob.com/go/go-operators.html" target="_blank" rel="noopener">http://www.runoob.com/go/go-operators.html</a></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/58375/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>VUE的IDE推荐和项目结构大纲</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/51281/">
+        <span>而立之年</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/16107/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GO语言的安装"><span class="toc-number">1.</span> <span class="toc-text"> GO语言的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装描述： Windows 系统下安装"><span class="toc-number">1.1.</span> <span class="toc-text"> 安装描述： Windows 系统下安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装测试"><span class="toc-number">1.2.</span> <span class="toc-text"> 安装测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GO的语言结构"><span class="toc-number">2.</span> <span class="toc-text"> GO的语言结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#执行 Go 程序"><span class="toc-number">2.1.</span> <span class="toc-text"> 执行 Go 程序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GO语言的基础语法"><span class="toc-number">3.</span> <span class="toc-text"> GO语言的基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Go 标记"><span class="toc-number">3.1.</span> <span class="toc-text"> Go 标记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行分隔符"><span class="toc-number">3.2.</span> <span class="toc-text"> 行分隔符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-number">3.3.</span> <span class="toc-text"> 注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标识符"><span class="toc-number">3.4.</span> <span class="toc-text"> 标识符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关键字"><span class="toc-number">3.5.</span> <span class="toc-text"> 关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Go 语言的空格"><span class="toc-number">3.6.</span> <span class="toc-text"> Go 语言的空格</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Go 语言数据类型"><span class="toc-number">4.</span> <span class="toc-text"> Go 语言数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#布尔类型 bool"><span class="toc-number">4.1.</span> <span class="toc-text"> 布尔类型 bool</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数字类型"><span class="toc-number">4.2.</span> <span class="toc-text"> 数字类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整型:"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 整型:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#uint8"><span class="toc-number">4.2.1.0.1.</span> <span class="toc-text"> uint8</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#uint16"><span class="toc-number">4.2.1.0.2.</span> <span class="toc-text"> uint16</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#uint32"><span class="toc-number">4.2.1.0.3.</span> <span class="toc-text"> uint32</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#uint64"><span class="toc-number">4.2.1.0.4.</span> <span class="toc-text"> uint64</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int8"><span class="toc-number">4.2.1.0.5.</span> <span class="toc-text"> int8</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int16"><span class="toc-number">4.2.1.0.6.</span> <span class="toc-text"> int16</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int32"><span class="toc-number">4.2.1.0.7.</span> <span class="toc-text"> int32</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int64"><span class="toc-number">4.2.1.0.8.</span> <span class="toc-text"> int64</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮点型："><span class="toc-number">4.2.2.</span> <span class="toc-text"> 浮点型：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#float32"><span class="toc-number">4.2.2.0.1.</span> <span class="toc-text"> float32</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#float64"><span class="toc-number">4.2.2.0.2.</span> <span class="toc-text"> float64</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#complex64"><span class="toc-number">4.2.2.0.3.</span> <span class="toc-text"> complex64</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#complex128"><span class="toc-number">4.2.2.0.4.</span> <span class="toc-text"> complex128</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他数字类型："><span class="toc-number">4.2.3.</span> <span class="toc-text"> 其他数字类型：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#byte"><span class="toc-number">4.2.3.0.1.</span> <span class="toc-text"> byte</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#rune"><span class="toc-number">4.2.3.0.2.</span> <span class="toc-text"> rune</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#uint"><span class="toc-number">4.2.3.0.3.</span> <span class="toc-text"> uint</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int"><span class="toc-number">4.2.3.0.4.</span> <span class="toc-text"> int</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#uintptr"><span class="toc-number">4.2.3.0.5.</span> <span class="toc-text"> uintptr</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GO语言变量"><span class="toc-number">5.</span> <span class="toc-text"> GO语言变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量声明"><span class="toc-number">5.0.1.</span> <span class="toc-text"> 变量声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多变量声明"><span class="toc-number">5.0.2.</span> <span class="toc-text"> 多变量声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#值类型和引用类型"><span class="toc-number">5.0.3.</span> <span class="toc-text"> 值类型和引用类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简短形式，使用:=赋值操作符"><span class="toc-number">5.0.4.</span> <span class="toc-text"> 简短形式，使用:&#x3D;赋值操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#注意事项"><span class="toc-number">5.0.4.0.1.</span> <span class="toc-text"> 注意事项</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Go语言常量"><span class="toc-number">6.</span> <span class="toc-text"> Go语言常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iota 常量"><span class="toc-number">6.0.1.</span> <span class="toc-text"> iota 常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#iota用法"><span class="toc-number">6.0.1.0.1.</span> <span class="toc-text"> iota用法</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GO语言运算符"><span class="toc-number">7.</span> <span class="toc-text"> GO语言运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算术运算符"><span class="toc-number">7.0.1.</span> <span class="toc-text"> 算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关系运算符"><span class="toc-number">7.0.2.</span> <span class="toc-text"> 关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算符"><span class="toc-number">7.0.3.</span> <span class="toc-text"> 逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#位运算符"><span class="toc-number">7.0.4.</span> <span class="toc-text"> 位运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#赋值运算符"><span class="toc-number">7.0.5.</span> <span class="toc-text"> 赋值运算符</span></a></li></ol></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '0aa16789343db1f501af',
+    clientSecret: '3db5fb720ab508ab78be7a31f071090dbe2ca21c',
+    repo: 'Arlinlol.github.io',
+    owner: 'Arlinlol',
+    admin: ['Arlinlol'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        arlin
+      </span>
+    </div>
+    <!--<div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div> -->
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+<script src="/js/mdui.min.js"></script>
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/images/pasted-0.png">
+    
+    
+    
+<link rel="stylesheet" href="/css/mdui.min.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            acme.sh快速上手 | Silicon-based Life
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Silicon-based Life</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">赋予硅基生命能力，说简单点就是码农。</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">首页</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/images/pasted-0.png"/>
+                
+            </div>
+            <div class="sidebar-author-name">arlin</div>
+            <div class="sidebar-description">说简单点就是码农</div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-twitter"></i></span>
+                    <a href="https://twitter.com/ledanzu" target="_blank" rel="noopener" class="mdui-chip-title">t</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-facebook"></i></span>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" class="mdui-chip-title">f</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a href="https://github.com/Arlinlol" target="_blank" rel="noopener" class="mdui-chip-title">g</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a href="https://storm-f.github.io/" target="_blank" rel="noopener" class="mdui-list-item mdui-ripple">
+                            F同学
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/12013/">acme.sh快速上手</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-05-25
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-25
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=acme.sh快速上手&url=http://arlin.wang/12013/&pic=http://arlin.wang/images/pasted-0.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=acme.sh快速上手&url=http://arlin.wang/12013/&via=arlin" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://arlin.wang/12013/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://arlin.wang/12013/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://arlin.wang/12013/&title=acme.sh快速上手" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Silicon-based Life&title=acme.sh快速上手&summary=说简单点就是码农&pics=http://arlin.wang/images/pasted-0.png&url=http://arlin.wang/12013/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://arlin.wang/12013/&text=acme.sh快速上手" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/HTTPS/ >HTTPS</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E7%BD%91%E7%AB%99%E8%AF%81%E4%B9%A6/ >网站证书</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/acme/ >acme</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <p>acme.sh是一个获取SSL证书的开源项目，可以实现自动申请、续签、安装证书，让网站实现https访问。</p>
+<p>本文档侧重于快速上手使用，更多高级用法请查阅acme.sh使用说明或acme.sh官方Wiki。</p>
+<h1 id="概述"><a class="header-anchor" href="#概述">¶</a> 概述</h1>
+<p>acme.sh是针对ACME协议编写的工具，默认使用的CA是Let’s Encrypt；只要你有域名的控制权，就可以在一分钟内拿到一张有效期三个月的泛域名证书，而acme.sh也可以实现自动申请、续签、安装证书。<br>
+对于含有非ASCII字符的域名（例如中文域名），需要先转为 Punycode ，由于Punycode的字符串中含有  – ，使用时务必将整个域名用英文引号括起来，即 <code>&quot;域名&quot;</code> 格式。<br>
+对于一个域名，比如 <code>dnomd343.top</code> ，其泛域名证书颁发给 <code>*.dnomd343.top</code>，此时主域名未被包含，因此申请时应同时指定 <code>dnomd343.top</code> 和 <code>*.dnomd343.top</code> 两个域名。<br>
+对于多级子域名，主域名的通配符证书并不适用，例如颁发给 <code>*.dnomd343.top</code> 的证书不适用于 <code>test.djnc.dnomd343.top </code>，必须使用颁发给 <code>*.djnc.dnomd343.top</code> 的证书；此外，域名证书最多只支持一个通配符，即不存在 <em>.</em>.dnomd343.top 或类似的证书。</p>
+<h2 id="安装acme.sh"><a class="header-anchor" href="#安装acme.sh">¶</a> <a href="http://xn--acme-ke9g492u.sh" target="_blank" rel="noopener">安装acme.sh</a></h2>
+<p>acme.sh的安装不需要root权限，安装过程不会污染已有的系统任何功能和文件，所有的修改都被限制在 ~/.acme.sh/ 中<br>
+使用如下命令自动安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; curl https:&#x2F;&#x2F;get.acme.sh | sh</span><br></pre></td></tr></table></figure>
+<p>安装完成后，重新连接窗口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; acme.sh --version</span><br><span class="line">https:&#x2F;&#x2F;github.com&#x2F;acmesh-official&#x2F;acme.sh</span><br><span class="line">v2.8.8</span><br></pre></td></tr></table></figure>
+<p>成功输出版本号即安装成功</p>
+<h2 id="申请证书"><a class="header-anchor" href="#申请证书">¶</a> 申请证书</h2>
+<p>acme.sh有多种证书申请方式，这里只介绍 DNS API模式 ，这个模式只需要提供域名服务商分配给你账号的凭证，acme.sh会自动用它自动申请、续签证书，整个过程无需用户干预，只要你的服务器能访问网络就可以拿到证书。<br>
+大部分域名服务商都会给用户提供API接口方便程序操作，其凭证一般称为 API Key ，acme.sh的文档中列出百余家服务商的使用方法。<br>
+这里以阿里云为例，申请 dnomd343.top 的全部证书；首先在阿里云AccessKey控制台拿到用户的 AccessKey ID 和 AccessKey Secret，然后执行如下命令：</p>
+<h3 id="阿里云域名访问的AccessKey"><a class="header-anchor" href="#阿里云域名访问的AccessKey">¶</a> 阿里云域名访问的AccessKey</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; export Ali_Key&#x3D;&quot;···&quot;</span><br><span class="line">shell&gt; export Ali_Secret&#x3D;&quot;···&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="申请主域名证书和泛域名证书"><a class="header-anchor" href="#申请主域名证书和泛域名证书">¶</a> 申请主域名证书和泛域名证书</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; acme.sh --issue --dns dns_ali -d dnomd343.top -d *.dnomd343.top</span><br><span class="line">···</span><br><span class="line">Cert success.</span><br><span class="line">···</span><br><span class="line">Your cert is in  &#x2F;home&#x2F;dnomd343&#x2F;.acme.sh&#x2F;dnomd343.top&#x2F;dnomd343.top.cer</span><br><span class="line">Your cert key is in  &#x2F;home&#x2F;dnomd343&#x2F;.acme.sh&#x2F;dnomd343.top&#x2F;dnomd343.top.key</span><br><span class="line">The intermediate CA cert is in  &#x2F;home&#x2F;dnomd343&#x2F;.acme.sh&#x2F;dnomd343.top&#x2F;ca.cer</span><br><span class="line">And the full chain certs is there:  &#x2F;home&#x2F;dnomd343&#x2F;.acme.sh&#x2F;dnomd343.top&#x2F;fullchain.cer</span><br></pre></td></tr></table></figure>
+<p>此时证书申请成功，文件放置在 <code>/home/dnomd343/.acme.sh/dnomd343.top </code>下面。</p>
+<h2 id="安装证书"><a class="header-anchor" href="#安装证书">¶</a> 安装证书</h2>
+<p>注意：不要直接用 .acme.sh/内的证书文件，里面目录结构随使可能会因为脚本自动更新而变动。<br>
+下面以nginx证书安装为例：</p>
+<h4 id="配置nginx"><a class="header-anchor" href="#配置nginx">¶</a> 配置nginx</h4>
+<p>存放配置的文件夹一般为 /etc/nginx/conf.d/，在其下新建 dnomd343.conf 文件；</p>
+<p>下面配置文件将 dnomd343.top 映射到 /var/www/dnomd343/ 目录下，使用 /etc/ssl/certs/dnomd343.top 下的证书文件配置https，并强制将http重写到https。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80; # 监听80端口(http)</span><br><span class="line">    server_name dnomd343.top;</span><br><span class="line">    return 301 https:&#x2F;&#x2F;$server_name$request_uri; # 返回301命令，将地址重写到https上</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl; # 监听443端口(https)</span><br><span class="line">    server_name dnomd343.top;</span><br><span class="line">    root &#x2F;var&#x2F;www&#x2F;dnomd343; # 指定网站根目录</span><br><span class="line">    ssl_certificate &#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;dnomd343.top&#x2F;fullchain.pem; # 指定SSL&#x2F;TLS证书</span><br><span class="line">    ssl_certificate_key &#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;dnomd343.top&#x2F;privkey.pem;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        index index.html; # 默认加载文件</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 dnomd343.top 域名解析中，配置 @ 的 A 记录指向本机的IP地址。<br>
+注意，请确认你的服务器防火墙是否拦截 80 和 443 端口，包括云服务商提供的防火墙和系统上安装的防火墙。<br>
+给nginx安装<br>
+将证书安装到 /etc/ssl/certs/dnomd343.top 下，并配置nginx的重启命令<br>
+查看证书申请状态：</p>
+<h3 id="列出全部证书"><a class="header-anchor" href="#列出全部证书">¶</a> 列出全部证书</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; acme.sh --list</span><br><span class="line">Main_Domain   KeyLength  SAN_Domains     CA               Created   Renew</span><br><span class="line">dnomd343.top  &quot;&quot;         *.dnomd343.top  LetsEncrypt.org  ···</span><br></pre></td></tr></table></figure>
+<p>安装证书到nginx，安装完成后会重启nginx使命令生效。</p>
+<h3 id="创建文件夹"><a class="header-anchor" href="#创建文件夹">¶</a> 创建文件夹</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; mkdir -p &#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;dnomd343.top&#x2F;</span><br></pre></td></tr></table></figure>
+<h1 id="安装证书-2"><a class="header-anchor" href="#安装证书-2">¶</a> 安装证书</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; acme.sh --install-cert -d dnomd343.top  \</span><br><span class="line">--key-file       &#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;dnomd343.top&#x2F;privkey.pem \</span><br><span class="line">--fullchain-file &#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;dnomd343.top&#x2F;fullchain.pem  \</span><br><span class="line">--reloadcmd      &quot;systemctl force-reload nginx&quot;</span><br><span class="line">···</span><br><span class="line">Installing key to:&#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;dnomd343.top&#x2F;privkey.pem</span><br><span class="line">Installing full chain to:&#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;dnomd343.top&#x2F;fullchain.pem</span><br><span class="line">Run reload cmd: systemctl force-reload nginx</span><br><span class="line">Reload success</span><br></pre></td></tr></table></figure>
+<p>为了确保服务启动成功，可以查看nginx监听端口的状态</p>
+<h3 id="查看80端口(http)状态"><a class="header-anchor" href="#查看80端口(http)状态">¶</a> 查看80端口(http)状态</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; netstat -tlnp | grep 80</span><br><span class="line">tcp     0     0 0.0.0.0:80       0.0.0.0:*     LISTEN      7227&#x2F;nginx: master</span><br><span class="line">tcp6    0     0 :::80            :::*          LISTEN      7227&#x2F;nginx: master</span><br></pre></td></tr></table></figure>
+<h3 id="查看443端口(https)状态"><a class="header-anchor" href="#查看443端口(https)状态">¶</a> 查看443端口(https)状态</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; netstat -tlnp | grep 443</span><br><span class="line">tcp     0     0 0.0.0.0:443      0.0.0.0:*     LISTEN      7227&#x2F;nginx: master</span><br></pre></td></tr></table></figure>
+<p>若上述命令均未报错，则证书安装成功，访问 <a href="https://dnomd343.com/" target="_blank" rel="noopener">https://dnomd343.com/</a> 确认是否配置成功。</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/63397/">
+        <span>电商后台设计</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/12013/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text"> 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装acme.sh"><span class="toc-number">1.1.</span> <span class="toc-text"> 安装acme.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#申请证书"><span class="toc-number">1.2.</span> <span class="toc-text"> 申请证书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#阿里云域名访问的AccessKey"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 阿里云域名访问的AccessKey</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#申请主域名证书和泛域名证书"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 申请主域名证书和泛域名证书</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装证书"><span class="toc-number">1.3.</span> <span class="toc-text"> 安装证书</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#配置nginx"><span class="toc-number">1.3.0.1.</span> <span class="toc-text"> 配置nginx</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列出全部证书"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 列出全部证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建文件夹"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 创建文件夹</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装证书-2"><span class="toc-number">2.</span> <span class="toc-text"> 安装证书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看80端口(http)状态"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 查看80端口(http)状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看443端口(https)状态"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 查看443端口(https)状态</span></a></li></ol></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '0aa16789343db1f501af',
+    clientSecret: '3db5fb720ab508ab78be7a31f071090dbe2ca21c',
+    repo: 'Arlinlol.github.io',
+    owner: 'Arlinlol',
+    admin: ['Arlinlol'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        arlin
+      </span>
+    </div>
+    <!--<div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div> -->
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+<script src="/js/mdui.min.js"></script>
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >

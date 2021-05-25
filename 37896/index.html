@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/images/pasted-0.png">
+    
+    
+    
+<link rel="stylesheet" href="/css/mdui.min.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            structlog4j的介绍 | Silicon-based Life
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Silicon-based Life</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">赋予硅基生命能力，说简单点就是码农。</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">首页</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/images/pasted-0.png"/>
+                
+            </div>
+            <div class="sidebar-author-name">arlin</div>
+            <div class="sidebar-description">说简单点就是码农</div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-twitter"></i></span>
+                    <a href="https://twitter.com/ledanzu" target="_blank" rel="noopener" class="mdui-chip-title">t</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-facebook"></i></span>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" class="mdui-chip-title">f</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a href="https://github.com/Arlinlol" target="_blank" rel="noopener" class="mdui-chip-title">g</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a href="https://storm-f.github.io/" target="_blank" rel="noopener" class="mdui-list-item mdui-ripple">
+                            F同学
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/37896/">structlog4j的介绍</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2020-05-10
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2020-05-10
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/JAVA%E5%B7%A5%E5%85%B7%E5%8C%85/">JAVA工具包</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=structlog4j的介绍&url=http://arlin.wang/37896/&pic=http://arlin.wang/images/pasted-0.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=structlog4j的介绍&url=http://arlin.wang/37896/&via=arlin" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://arlin.wang/37896/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://arlin.wang/37896/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://arlin.wang/37896/&title=structlog4j的介绍" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Silicon-based Life&title=structlog4j的介绍&summary=说简单点就是码农&pics=http://arlin.wang/images/pasted-0.png&url=http://arlin.wang/37896/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://arlin.wang/37896/&text=structlog4j的介绍" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/structlog4j/ >structlog4j</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h2 id="JAVA结构化日志包"><a class="header-anchor" href="#JAVA结构化日志包">¶</a> JAVA结构化日志包</h2>
+<p><img src="https://github.com/jacek99/structlog4j/raw/master/img/logo.png" alt=""></p>
+<p><a href="https://github.com/jacek99/structlog4j" target="_blank" rel="noopener">GITHUB地址</a></p>
+<h3 id="简介"><a class="header-anchor" href="#简介">¶</a> 简介</h3>
+<p>Structlog4J基于SLF4J的API基础之上，设计了生成简而易懂的具有数据结构的日志消息，可以将日志内容提供给一些日志分析的服务，比如说LogStash，Splunk，ElasticSearch，等等。</p>
+<h3 id="如何添加到项目中"><a class="header-anchor" href="#如何添加到项目中">¶</a> 如何添加到项目中</h3>
+<p>这个工具包的jar包已经提交到比较流行的Bintray JCcenter Maven 仓库中。</p>
+<h4 id="Gradle 方式引用"><a class="header-anchor" href="#Gradle 方式引用">¶</a> Gradle 方式引用</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    jcenter()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">compile &#39;structlog4j:structlog4j-api:1.0.0&#39;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Optional JSON formatter</span><br><span class="line">compile &#39;structlog4j:structlog4j-json:1.0.0&#39;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Optional YAML formatter</span><br><span class="line">compile &#39;structlog4j:structlog4j-yaml:1.0.0&#39;</span><br></pre></td></tr></table></figure>
+<h4 id="Maven"><a class="header-anchor" href="#Maven">¶</a> Maven</h4>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--仓库--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>jcenter<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://jcenter.bintray.com<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>structlog4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>structlog4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Optional JSON formatter --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>structlog4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>structlog4j-json<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Optional YAML formatter --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>structlog4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>structlog4j-yaml<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="预览"><a class="header-anchor" href="#预览">¶</a> 预览</h3>
+<p>标准的JAVA日志输出像这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Processed 23 flight records for flight UA1234 for airline United</span><br></pre></td></tr></table></figure>
+<p>这个是人类比较容易读懂的，但是对于那些日志分析服务是要解析这些内容的含义是比较麻烦的，因为任何开发人员都可以输入任何他们可以表达预期含义的文字和格式。</p>
+<p>解决上述问题，我们利用这个工具包可以生成的消息格式像这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Processed flight records recordCount&#x3D;23 airlineCode&#x3D;UA flightNumber&#x3D;1234 airlineName&#x3D;United</span><br></pre></td></tr></table></figure>
+<p>或者是JSON格式（需要使用自带的JSON格式化包）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;message&quot;: &quot;Processed flight records&quot;,</span><br><span class="line">    &quot;recordCount&quot;: 23,</span><br><span class="line">    &quot;airlineCode&quot;: &quot;UA&quot;,</span><br><span class="line">    &quot;flightNumber&quot;: &quot;1234&quot;,</span><br><span class="line">    &quot;airlineName&quot;: &quot;United&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者是YAML格式（需要使用自带的YAML格式化包）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">message: Processed flight records</span><br><span class="line">recordCount: 23</span><br><span class="line">airlineCode: UA</span><br><span class="line">flightNumber: 1234</span><br><span class="line">airlineName: United</span><br></pre></td></tr></table></figure>
+<p>这些格式是非常容易被解析的，通过键值对的形式非常简单准确的描述了日志表达的信息。</p>
+<p>When this type of log entry is forwarded to a log aggregation service (such as Splunk, Logstash, etc) it is trivial to parse it and extract context information from it.<br>
+Thus, it is very easy to perform log analytics, which are criticial to many open applications (especially multi-tenant cloud applications).</p>
+<h1 id="Usage"><a class="header-anchor" href="#Usage">¶</a> Usage</h1>
+<p>StructLog4J is implemented itself on top of the SLF4J API. Therefore any application that already uses SLF4J can<br>
+start using it immediately as it requires no other changes to existing logging configuration.</p>
+<p>Instead of the standard SLF4J Logger, you must instantiate the StructLog4J Logger:</p>
+<pre><code>private ILogger log = SLoggerFactory.getLogger(MyClass.class);
+</code></pre>
+<p>The <strong>ILogger</strong> interface is very simple and offers just these basic methods:</p>
+<pre><code>public interface ILogger {
+    public void error(String message, Object...params);
+    public void warn(String message, Object...params);
+    public void info(String message, Object...params);
+    public void debug(String message, Object...params);
+    public void trace(String message, Object...params);
+}
+</code></pre>
+<h2 id="Logging key value pairs"><a class="header-anchor" href="#Logging key value pairs">¶</a> Logging key value pairs</h2>
+<p>Just pass in key/value pairs as parameters (all keys <strong>must</strong> be String, values can be anything), e.g.</p>
+<pre><code>log.info(&quot;Starting processing&quot;,
+            &quot;user&quot;, securityContext.getPrincipal().getName(),
+            &quot;tenanId&quot;,securityContext.getTenantId());
+</code></pre>
+<p>which would generate a log message like:</p>
+<pre><code>Starting processing user=johndoe@gmail.com tenantId=SOME_TENANT_ID
+</code></pre>
+<h2 id="Logging exceptions"><a class="header-anchor" href="#Logging exceptions">¶</a> Logging exceptions</h2>
+<p>There is no separate API for Throwable (like in SLF4j), just pass in the exception as one of the parameters (order is not<br>
+important) and we will log its root cause message and the entire exception stack trace:</p>
+<pre><code>} catch (Exception e) {
+    log.error(&quot;Error occcurred during batch processing&quot;,
+        &quot;user&quot;,securityContext.getPrincipal().getName(),
+        &quot;tenanId&quot;,securityContext.getTenantId(),
+        e);
+}
+</code></pre>
+<p>which would generate a log message like:</p>
+<pre><code>Error occurred during batch processing user=johndoe@gmail.com tenantId=SOME_TENANT_ID errorMessage=&quot;ORA-14094: Oracle Hates You&quot;
+...followed by regular full stack trace of the exception...
+</code></pre>
+<h2 id="Enforcing custom logging format per object"><a class="header-anchor" href="#Enforcing custom logging format per object">¶</a> Enforcing custom logging format per object</h2>
+<p>If you wish, any POJO in your app can implement the <strong>IToLog</strong> interface, e.g.</p>
+<pre><code>public class TenantSecurityContext implements IToLog {
+
+    private String userName;
+    private String tenantId;
+
+    @Override
+    public Object[] toLog() {
+        return new Object[]{&quot;userName&quot;,getUserName(),&quot;tenantId&quot;,getTenantId()};
+    }
+}
+</code></pre>
+<p>Then you can just pass in the object instance directly, without the need to specify any key/value pairs:</p>
+<pre><code>log.info(&quot;Starting processing&quot;,securityContext);
+</code></pre>
+<p>and that will generate a log entry like:</p>
+<pre><code>Starting processing user=johndoe@gmail.com tenantId=SOME_TENANT_ID
+</code></pre>
+<h2 id="All together now"><a class="header-anchor" href="#All together now">¶</a> All together now</h2>
+<p>You can mix and match all of these together without any issues:</p>
+<pre><code>    } catch (Exception e) {
+        log.error(&quot;Error occcurred during batch processing&quot;,
+            securityContext,
+            e,
+            &quot;hostname&quot;, InetAddress.getLocalHost().getHostName());
+    }
+</code></pre>
+<p>and you would get:</p>
+<pre><code>Error occurred during batch processing user=johndoe@gmail.com tenantId=SOME_TENANT_ID errorMessage=&quot;ORA-14094: Oracle Hates You&quot; hostname=DEV_SERVER1
+...followed by regular full stack trace of the exception...
+</code></pre>
+<h2 id="Specifying mandatory context key/value pairs"><a class="header-anchor" href="#Specifying mandatory context key/value pairs">¶</a> Specifying mandatory context key/value pairs</h2>
+<p>If you have specific key/value pairs that you would like logged automatically with every log entry (host name and service name are a good example),<br>
+then you just have to specify a mandatory context lambda:</p>
+<pre><code>StructLog4J.setMandatoryContextSupplier(() -&gt; new Object[]{
+    &quot;hostname&quot;, InetAddress.getLocalHost().getHostName(),
+    &quot;serviceName&quot;,&quot;MyService&quot;});
+</code></pre>
+<p>Now these mandatory key/value pairs will be logged automatically on <strong>every</strong> log entry, without the need to specify them manually.</p>
+<h1 id="Logging Formats"><a class="header-anchor" href="#Logging Formats">¶</a> Logging Formats</h1>
+<h2 id="Key/Value Pairs"><a class="header-anchor" href="#Key/Value Pairs">¶</a> Key/Value Pairs</h2>
+<p>By default we log in the standard key/value pair format, e.g.:</p>
+<pre><code>Starting processing user=johndoe@gmail.com tenantId=SOME_TENANT_ID
+</code></pre>
+<p>No extra configuration is necesary.</p>
+<h2 id="JSON"><a class="header-anchor" href="#JSON">¶</a> JSON</h2>
+<p>If you want all messages to be logged in JSON instead, e.g.</p>
+<pre><code>    {
+        &quot;message&quot;: &quot;Started processing&quot;,
+        &quot;user&quot;: johndoe@gmail.com,
+        &quot;tenantId&quot;: &quot;SOME_TENANT_ID&quot;
+    }
+</code></pre>
+<p>then you need to add the JSON formatter library as a dependency (where $version is the current library version):</p>
+<pre><code>compile 'structlog4j:structlog4j-json:$version'
+</code></pre>
+<p>and then just execute the following code in the startup main() of your application:</p>
+<pre><code>import com.github.structlog4j.json.JsonFormatter;
+
+StructLog4J.setFormatter(JsonFormatter.getInstance());
+</code></pre>
+<p>That’s it.</p>
+<h2 id="YAML"><a class="header-anchor" href="#YAML">¶</a> YAML</h2>
+<p>If you want all messages to be logged in YAML instead, e.g.</p>
+<pre><code>message: Started processing
+user: johndoe@gmail.com
+tenantId: SOME_TENANT_ID
+</code></pre>
+<p>then you need to add the YAML formatter library as a dependency (where $version is the current library version):</p>
+<pre><code>compile 'structlog4j:structlog4j-yaml:$version'
+</code></pre>
+<p>and then just execute the following code in the startup main() of your application:</p>
+<pre><code>import com.github.structlog4j.yaml.YamlFormatter;
+
+StructLog4J.setFormatter(YamlFormatter.getInstance());
+</code></pre>
+<p>That’s it.</p>
+<h1 id="License"><a class="header-anchor" href="#License">¶</a> License</h1>
+<p>MIT License.</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/31296/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>Dart是个啥，一文了解！</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/57654/">
+        <span>Mac环境 STS（spring tool suite）导入lombok</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/37896/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JAVA结构化日志包"><span class="toc-number">1.</span> <span class="toc-text"> JAVA结构化日志包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.1.</span> <span class="toc-text"> 简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何添加到项目中"><span class="toc-number">1.2.</span> <span class="toc-text"> 如何添加到项目中</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Gradle 方式引用"><span class="toc-number">1.2.1.</span> <span class="toc-text"> Gradle 方式引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven"><span class="toc-number">1.2.2.</span> <span class="toc-text"> Maven</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#预览"><span class="toc-number">1.3.</span> <span class="toc-text"> 预览</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Usage"><span class="toc-number"></span> <span class="toc-text"> Usage</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Logging key value pairs"><span class="toc-number">1.</span> <span class="toc-text"> Logging key value pairs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logging exceptions"><span class="toc-number">2.</span> <span class="toc-text"> Logging exceptions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Enforcing custom logging format per object"><span class="toc-number">3.</span> <span class="toc-text"> Enforcing custom logging format per object</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#All together now"><span class="toc-number">4.</span> <span class="toc-text"> All together now</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Specifying mandatory context key/value pairs"><span class="toc-number">5.</span> <span class="toc-text"> Specifying mandatory context key&#x2F;value pairs</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Logging Formats"><span class="toc-number"></span> <span class="toc-text"> Logging Formats</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Key/Value Pairs"><span class="toc-number">1.</span> <span class="toc-text"> Key&#x2F;Value Pairs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON"><span class="toc-number">2.</span> <span class="toc-text"> JSON</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#YAML"><span class="toc-number">3.</span> <span class="toc-text"> YAML</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#License"><span class="toc-number"></span> <span class="toc-text"> License</span></a>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '0aa16789343db1f501af',
+    clientSecret: '3db5fb720ab508ab78be7a31f071090dbe2ca21c',
+    repo: 'Arlinlol.github.io',
+    owner: 'Arlinlol',
+    admin: ['Arlinlol'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        arlin
+      </span>
+    </div>
+    <!--<div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div> -->
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+<script src="/js/mdui.min.js"></script>
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
